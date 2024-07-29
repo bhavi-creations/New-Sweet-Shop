@@ -364,7 +364,7 @@ ob_end_flush(); // Flush the output buffer
                                             <td class="td_id_num"><?php echo $no ?></td>
                                             <td class="td_id_num"><img
                                                     src="./uploads/staff/<?php echo $data['UploadPhoto'] ?>"
-                                                    style="height:100px; width:150px;" /></td>
+                                                    style="height:80px; width:80px;" /></td>
                                             <td class="td_id_num"><?php echo $data['PersonName'] ?></td>
                                             <td class="td_id_num"><?php echo $data['Address'] ?></td>
                                             <td class="td_id_num"><?php echo $data['Age'] ?></td>
@@ -471,11 +471,17 @@ ob_end_flush(); // Flush the output buffer
 
                                 <table class="table_stf">
                                     <thead class="table_bg">
-                                        <tr>
+                                    <tr>
                                             <th class="th_names">ID</th>
-                                            <th class="th_names">Incharges Names</th>
-                                            <th class="th_names">Phone Number</th>
+                                            <th class="th_names">Upload Photo</th>
+                                            <th class="th_names">Person Name</th>
                                             <th class="th_names">Address</th>
+                                            <th class="th_names">Age</th>
+                                            <th class="th_names">Account No</th>
+                                            <th class="th_names">Phone No</th>
+                                            <th class="th_names">Salary</th>
+                                            <th class="th_names">From Branch</th>
+                                            <th class="th_names">Joining Date</th>
                                             <th class="th_names">Actions</th>
                                         </tr>
                                     </thead>
@@ -490,7 +496,7 @@ ob_end_flush(); // Flush the output buffer
                                             <td class="td_id_num"><?php echo $no ?></td>
                                             <td class="td_id_num"><img
                                                     src="./uploads/staff/<?php echo $data['UploadPhoto'] ?>"
-                                                    style="height:100px; width:150px;" /></td>
+                                                    style="height:80px; width:80px;" /></td>
                                             <td class="td_id_num"><?php echo $data['PersonName'] ?></td>
                                             <td class="td_id_num"><?php echo $data['Address'] ?></td>
                                             <td class="td_id_num"><?php echo $data['Age'] ?></td>
