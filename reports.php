@@ -83,17 +83,17 @@
                                                 </div>
                                                 <div class="col-md-6  mt-5">
                                                     <label class="control-label mb-2 field_txt">Incharge Name</label>
-                                                    <input type="text" class="form-control field_input_bg" name="age">
+                                                    <input type="text" class="form-control field_input_bg" name="incharge">
                                                 </div>
                                                 <div class="col-md-6  mt-5">
                                                     <label class="control-label mb-2 field_txt">Earnings</label>
-                                                    <input type="number" class="form-control field_input_bg" name="account">
+                                                    <input type="number" class="form-control field_input_bg" name="earnimngs">
 
 
                                                 </div>
                                                 <div class="col-md-6  mt-5">
                                                     <label class="control-label mb-2 field_txt">Monthly expenses</label>
-                                                    <input type="number" class="form-control field_input_bg" name="phone">
+                                                    <input type="number" class="form-control field_input_bg" name="expenses">
 
 
                                                 </div>
@@ -105,7 +105,7 @@
 
                                                     <div class="row last_back_submit  d-flex flex-row justify-content-between  px-3">
                                                         <button class="back_btn_staff">Back</button>
-                                                        <button class="submit_btn_staff">Submit</button>
+                                                        <button class="submit_btn_staff " name="submit-btn">Submit</button>
 
                                                     </div>
 

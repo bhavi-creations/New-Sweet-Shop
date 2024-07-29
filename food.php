@@ -84,31 +84,31 @@
                                                 <div class="col-md-6 mt-5">
                                                     <label class="control-label mb-2 field_txt">Branch Area</label>
                                                     <input type="text" class="form-control field_input_bg"
-                                                        name="address">
+                                                        name="area">
 
                                                 </div>
                                                 <div class="col-md-6  mt-5">
                                                     <label class="control-label mb-2 field_txt">Incharge Name</label>
-                                                    <input type="text" class="form-control field_input_bg" name="age">
+                                                    <input type="text" class="form-control field_input_bg" name="incharge">
                                                 </div>
                                                 <div class="col-md-6  mt-5">
                                                     <label class="control-label mb-2 field_txt">No of Items</label>
                                                     <input type="number" class="form-control field_input_bg"
-                                                        name="account">
+                                                        name="items">
 
 
                                                 </div>
                                                 <div class="col-md-6  mt-5">
                                                     <label class="control-label mb-2 field_txt">Phone Number</label>
                                                     <input type="number" class="form-control field_input_bg"
-                                                        name="account">
+                                                        name="phone">
 
 
                                                 </div>
                                                 <div class="col-md-6  mt-5">
                                                     <label class="control-label mb-2 field_txt">Monthly expenses</label>
                                                     <input type="number" class="form-control field_input_bg"
-                                                        name="phone">
+                                                        name="expenses">
 
 
                                                 </div>
@@ -121,7 +121,7 @@
                                                     <div
                                                         class="row last_back_submit  d-flex flex-row justify-content-between  px-3">
                                                         <button class="back_btn_staff">Back</button>
-                                                        <button class="submit_btn_staff">Submit</button>
+                                                        <button class="submit_btn_staff"  name="submit-btn">Submit</button>
 
                                                     </div>
 
