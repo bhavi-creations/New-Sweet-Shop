@@ -4,6 +4,21 @@
     <?php
     include "assets/includes/sidebar.php";
     include "assets/includes/header.php";
+    include "assets/includes/db.php";
+    if (isset($_POST['submit-btn'])) {
+
+        $bArea = mysqli_real_escape_string($db_con, $_POST['brancharea']);
+
+
+
+        $branchesQuery = mysqli_query($db_con, "INSERT INTO branch SET BranchArea	='" . $bArea . "',status=1");
+        if ($branchesQuery) {
+            echo '<script>alert("Data Inserted Successfully")</script>';
+            echo '<script>window.location.href="#"</script>';
+        } else {
+            echo '<script>alert("Failed To Inserted")</script>';
+        }
+    }
     ?>
 
 
@@ -23,26 +38,26 @@
                             </ul>
 
                             <script>
-                                const listItems = document.querySelectorAll('.open_table');
-                                const tableContainers = document.querySelectorAll('.table-container');
+                            const listItems = document.querySelectorAll('.open_table');
+                            const tableContainers = document.querySelectorAll('.table-container');
 
-                                listItems.forEach(item => {
-                                    item.addEventListener('click', function() {
-                                        listItems.forEach(i => i.classList.remove('active'));
-                                        this.classList.add('active');
-                                        updateTable(this.id);
-                                    });
+                            listItems.forEach(item => {
+                                item.addEventListener('click', function() {
+                                    listItems.forEach(i => i.classList.remove('active'));
+                                    this.classList.add('active');
+                                    updateTable(this.id);
                                 });
+                            });
 
-                                function updateTable(id) {
-                                    tableContainers.forEach(container => container.classList.remove('active'));
-                                    document.querySelectorAll('.table-container').forEach(container => container.classList
-                                        .remove('active'));
-                                    document.getElementById(id + 'Table').classList.add('active');
-                                }
+                            function updateTable(id) {
+                                tableContainers.forEach(container => container.classList.remove('active'));
+                                document.querySelectorAll('.table-container').forEach(container => container.classList
+                                    .remove('active'));
+                                document.getElementById(id + 'Table').classList.add('active');
+                            }
 
-                                // Initially show the details table
-                                document.getElementById('reportsTable').classList.add('active');
+                            // Initially show the details table
+                            document.getElementById('reportsTable').classList.add('active');
                             </script>
                         </div>
 
@@ -89,12 +104,15 @@
                                         <div class="row">
                                             <div class="col-md-6 mt-5">
                                                 <label class="control-label mb-2 field_txt">Branch Area</label>
-                                                <input type="text" class="form-control field_input_bg" name="branch_area">
+                                                <input type="text" class="form-control field_input_bg"
+                                                    name="brancharea">
                                             </div>
                                             <div class="col-md-6 mt-5">
-                                                <div class="row last_back_submit d-flex flex-row justify-content-between px-3">
+                                                <div
+                                                    class="row last_back_submit d-flex flex-row justify-content-between px-3">
                                                     <button class="back_btn_staff">Back</button>
-                                                    <button type="submit" class="submit_btn_staff">Submit</button>
+                                                    <button type="submit" class="submit_btn_staff"
+                                                        name="submit-btn">Submit</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -120,27 +138,29 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <!-- <?php
-                                                $sql = "SELECT id, branch_area FROM branches";
-                                                $result = $conn->query($sql);
+                                        <?php
+                                        $getQuery = mysqli_query($db_con, "SELECT * FROM branch WHERE status = 1");
+                                        $no = 1;
+                                        while ($data = mysqli_fetch_array($getQuery)) {
 
-                                                if ($result->num_rows > 0) {
-                                                    while ($row = $result->fetch_assoc()) {
-                                                        echo "<tr class='tr_hover'>
-                                                            <td class='td_id_num'>" . $row["id"] . "</td>
-                                                            <td class='td_id_num'>" . $row["branch_area"] . "</td>
-                                                            <td>
-                                                                <button class='edit_icon'><i class='fa-regular fa-pen-to-square'></i></button>
-                                                                <button class='dlt_icon'><i class='fa-regular fa-trash-can'></i></button>
-                                                            </td>
-                                                          </tr>";
-                                                    }
-                                                } else {
-                                                    echo "<tr><td colspan='3'>No branches found</td></tr>";
-                                                }
+                                        ?>
+                                        <tr class="tr_hover">
+                                            <td class="td_id_num"><?php echo $no ?></td>
+                                            <td class="td_id_num"><?php echo $data['BranchArea'] ?></td>
 
-                                                $conn->close();
-                                                ?> -->
+
+                                            <td>
+                                                <button class="edit_icon"><i
+                                                        class="fa-regular fa-pen-to-square"></i></button>
+                                                <button class="dlt_icon"><i
+                                                        class="fa-regular fa-trash-can"></i></button>
+                                            </td>
+                                        </tr>
+                                        <?php
+                                            $no++;
+                                        }
+                                        ?>
+                                        <!-- Add more rows as needed -->
                                     </tbody>
                                 </table>
                             </div>
