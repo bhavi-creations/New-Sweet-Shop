@@ -18,27 +18,10 @@
 
         $billingQuery = mysqli_query($db_con, "INSERT INTO items SET ItemName='" . $iname . "',Kgs='" . $kggs . "',Amount='" . $amnt . "',Discount='" . $disc . "',InchargeName	='" . $incName . "',Branch='" . $brnch . "',Date='" . $dat . "', status=1");
         if ($billingQuery) {
-            echo '<script type="text/javascript">
-        $(document).ready(function() {
-            swal({
-                title: "Success...!",
-                text: "Data Inserted Successfully!!",
-                icon: "success",
-                button: "Ok",
-            });
-        });
-    </script>';
+            echo '<script>alert("Data Inserted Successfully")</script>';
+            echo '<script>window.location.href="#"</script>';
         } else {
-            echo '<script type="text/javascript">
-        $(document).ready(function() {
-            swal({
-                title: "Failed...!",
-                text: "Failed to Insert!!",
-                icon: "error",
-                button: "Ok",
-            });
-        });
-    </script>';
+            echo '<script>alert("Failed To Inserted")</script>';
         }
     }
 
@@ -62,7 +45,6 @@
                             <ul class="ul_style">
                                 <li id="addReport" class="add_staff_list_detils open_table">+ Add Item</li>
 
-                                <!-- <li id="reports" class="staff_list_detils open_table active">Items</li> -->
                                 <li id="totalBranch" class="staff_list_detils open_table">Total Items</li>
 
                             </ul>
