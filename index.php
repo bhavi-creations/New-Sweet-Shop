@@ -1,12 +1,12 @@
  <div id="wrapper">
 
 
-    <?php
+     <?php
         include "assets/includes/sidebar.php";
         include "assets/includes/header.php";
-    ?>
+        ?>
 
-    <div id="content-wrapper" class="d-flex flex-column   bg-white">
+     <div id="content-wrapper" class="d-flex flex-column   bg-white">
 
 
          <div id="content">
@@ -263,11 +263,11 @@
          </div>
 
 
-    </div>
+     </div>
 
 
-     
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
          <div class="modal-dialog" role="document">
              <div class="modal-content">
                  <div class="modal-header">
@@ -283,13 +283,13 @@
                  </div>
              </div>
          </div>
-    </div>
+     </div>
 
 
 
 
-    <?php
+     <?php
         include "assets/includes/footer.php";
-    ?>
+        ?>
  </div>
-     <!-- Bootstrap core JavaScript-->
+ <!-- Bootstrap core JavaScript-->
