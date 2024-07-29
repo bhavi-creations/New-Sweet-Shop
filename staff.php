@@ -1,12 +1,16 @@
+<?php
+ob_start(); // Start output buffering
+?>
+
 <div id="wrapper">
 
+<?php
+include "assets/includes/sidebar.php";
+include "assets/includes/header.php";
+include "assets/includes/db.php";
 
-    <?php
-    include "assets/includes/sidebar.php";
-    include "assets/includes/header.php";
-    include "assets/includes/db.php";
-
-    if (isset($_POST['submit_btn'])) {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (isset($_POST['submit-btn'])) {
         $prsn = mysqli_real_escape_string($db_con, $_POST['person']);
         $add = mysqli_real_escape_string($db_con, $_POST['address']);
         $age = mysqli_real_escape_string($db_con, $_POST['age']);
@@ -15,30 +19,61 @@
         $slry = mysqli_real_escape_string($db_con, $_POST['salary']);
         $brnch = mysqli_real_escape_string($db_con, $_POST['branch']);
         $jng = mysqli_real_escape_string($db_con, $_POST['joining']);
-
-
         $image = mysqli_real_escape_string($db_con, $_FILES['photo']['name']);
         $imageFileType = pathinfo($image, PATHINFO_EXTENSION);
-        if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "JPG" && $imageFileType != "jpeg" && $imageFileType != "gif") {
+
+        if (!in_array(strtolower($imageFileType), ['jpg', 'jpeg', 'png', 'gif'])) {
             echo "<script>alert('only JPG, JPEG, PNG & GIF files are allowed.')</script>";
         } else {
             $targetimg = "uploads/blog/";
             $imgrename = date('Ymd') . rand(1, 1000000) . '.' . 'jpg';
-            $image1 = move_uploaded_file($_FILES['blogImage']['tmp_name'], $targetimg . $imgrename);
+            $image1 = move_uploaded_file($_FILES['photo']['tmp_name'], $targetimg . $imgrename);
+
+            $staffQuery = mysqli_query($db_con, "INSERT INTO staff (UploadPhoto, PersonName, Address, Age, AccountNo, PhoneNo, Salary, FromBranch, JoiningDate, status) VALUES ('$imgrename', '$prsn', '$add', '$age', '$acnt', '$phn', '$slry', '$brnch', '$jng', 1)");
+
+            if ($staffQuery) {
+                echo '<script>alert("Staff Data Inserted Successfully")</script>';
+                header('Location: ' . $_SERVER['PHP_SELF']);
+                exit();
+            } else {
+                echo '<script>alert("Failed To Insert Staff Data")</script>';
+            }
         }
+    } elseif (isset($_POST['submit_incharge_btn'])) {
+        $prsn = mysqli_real_escape_string($db_con, $_POST['person']);
+        $add = mysqli_real_escape_string($db_con, $_POST['address']);
+        $age = mysqli_real_escape_string($db_con, $_POST['age']);
+        $acnt = mysqli_real_escape_string($db_con, $_POST['account']);
+        $phn = mysqli_real_escape_string($db_con, $_POST['phone']);
+        $slry = mysqli_real_escape_string($db_con, $_POST['salary']);
+        $brnch = mysqli_real_escape_string($db_con, $_POST['branch']);
+        $jng = mysqli_real_escape_string($db_con, $_POST['joining']);
+        $image = mysqli_real_escape_string($db_con, $_FILES['photo']['name']);
+        $imageFileType = pathinfo($image, PATHINFO_EXTENSION);
 
-        $staffQuery = mysqli_query($db_con, "INSERT INTO staff SET UploadPhoto='" . $imgrename . "', PersonName='" . $prsn . "',Address='" . $add . "',Age='" . $age . "',AccountNo='" . $acnt . "',PhoneNo='" . $phn . "',Salary='" . $slry . "',FromBranch='" . $brnch . "',JoiningDate='" . $jng . "',status=1");
-
-        if ($staffQuery) {
-            echo '<script>alert("Data Inserted Successfully")</script>';
-            echo '<script>window.location.href="#"</script>';
+        if (!in_array(strtolower($imageFileType), ['jpg', 'jpeg', 'png', 'gif'])) {
+            echo "<script>alert('only JPG, JPEG, PNG & GIF files are allowed.')</script>";
         } else {
-            echo '<script>alert("Failed To Inserted")</script>';
+            $targetimg = "uploads/blog/";
+            $imgrename = date('Ymd') . rand(1, 1000000) . '.' . 'jpg';
+            $image1 = move_uploaded_file($_FILES['photo']['tmp_name'], $targetimg . $imgrename);
+
+            $inchargeQuery = mysqli_query($db_con, "INSERT INTO incharge (UploadPhoto, PersonName, Address, Age, AccountNo, PhoneNo, Salary, FromBranch, JoiningDate, status) VALUES ('$imgrename', '$prsn', '$add', '$age', '$acnt', '$phn', '$slry', '$brnch', '$jng', 1)");
+
+            if ($inchargeQuery) {
+                echo '<script>alert("Incharge Data Inserted Successfully")</script>';
+                header('Location: ' . $_SERVER['PHP_SELF']);
+                exit();
+            } else {
+                echo '<script>alert("Failed To Insert Incharge Data")</script>';
+            }
         }
     }
+}
+ob_end_flush(); // Flush the output buffer
+?>
 
 
-    ?>
 
 
     <div id="content-wrapper" class="d-flex flex-column   bg-white">
@@ -268,7 +303,7 @@
                                                 <div
                                                     class="row last_back_submit  d-flex flex-row justify-content-between  px-3">
                                                     <button class="back_btn_staff">Back</button>
-                                                    <button class="submit_btn_staff" name="submit-btn">Submit</button>
+                                                    <button class="submit_btn_staff" name="submit_incharge_btn">Submit</button>
 
                                                 </div>
 
@@ -445,14 +480,26 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <?php
+                                        $getQuery = mysqli_query($db_con, "SELECT * FROM incharge WHERE status = 1");
+                                        $no = 1;
+                                        while ($data = mysqli_fetch_array($getQuery)) {
+
+                                        ?>
                                         <tr class="tr_hover">
-                                            <td class="td_id_num">1</td>
-                                            <td class="td_id_num">
-                                                <img src="img/profile (2).png" alt="Jane Doe" class="td_profile_pic">
-                                                Jane Doe
-                                            </td>
-                                            <td class="td_id_mob">987-654-3210</td>
-                                            <td class="td_id_num">456 Main St, City, Country</td>
+                                            <td class="td_id_num"><?php echo $no ?></td>
+                                            <td class="td_id_num"><img
+                                                    src="./uploads/staff/<?php echo $data['UploadPhoto'] ?>"
+                                                    style="height:100px; width:150px;" /></td>
+                                            <td class="td_id_num"><?php echo $data['PersonName'] ?></td>
+                                            <td class="td_id_num"><?php echo $data['Address'] ?></td>
+                                            <td class="td_id_num"><?php echo $data['Age'] ?></td>
+                                            <td class="td_id_num"><?php echo $data['AccountNo'] ?></td>
+                                            <td class="td_id_num"><?php echo $data['PhoneNo'] ?></td>
+                                            <td class="td_id_num"><?php echo $data['Salary'] ?></td>
+                                            <td class="td_id_num"><?php echo $data['FromBranch'] ?></td>
+                                            <td class="td_id_num"><?php echo $data['JoiningDate'] ?></td>
+
                                             <td>
                                                 <button class="edit_icon"><i
                                                         class="fa-regular fa-pen-to-square"></i></button>
@@ -460,6 +507,10 @@
                                                         class="fa-regular fa-trash-can"></i></button>
                                             </td>
                                         </tr>
+                                        <?php
+                                            $no++;
+                                        }
+                                        ?>
                                         <!-- Add more rows as needed -->
                                     </tbody>
                                 </table>

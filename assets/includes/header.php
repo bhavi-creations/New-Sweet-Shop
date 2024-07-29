@@ -1,3 +1,8 @@
+<?php
+ob_start(); // Start output buffering
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
