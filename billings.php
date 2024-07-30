@@ -45,7 +45,7 @@
                             <ul class="ul_style">
                                 <li id="addReport" class="add_staff_list_detils open_table">+ Add Item</li>
 
-                                <li id="totalBranch" class="staff_list_detils open_table">Total Items</li>
+                                <li id="totalBranch" class="staff_list_detils open_table active">Total Items</li>
 
                             </ul>
 
@@ -211,7 +211,7 @@
                                 </table>
                             </div> -->
 
-                            <div id="totalBranchTable" class="table-container  ">
+                            <div id="totalBranchTable" class="table-container active ">
 
 
                                 <div class="container">

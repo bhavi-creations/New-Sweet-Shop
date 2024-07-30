@@ -292,4 +292,4 @@
         include "assets/includes/footer.php";
         ?>
  </div>
- <!-- Bootstrap core JavaScript-->
+ 

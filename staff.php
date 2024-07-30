@@ -207,7 +207,7 @@ ob_end_flush(); // Flush the output buffer
                                                 <div
                                                     class="row last_back_submit  d-flex flex-row justify-content-between  px-3">
                                                     <button class="back_btn_staff">Back</button>
-                                                    <button class="submit_btn" name="submit-btn">Submit</button>
+                                                    <button class="submit_btn_staff" name="submit-btn">Submit</button>
 
                                                 </div>
 
