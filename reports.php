@@ -181,8 +181,14 @@
                                                 <td class="td_id_num"><?php echo $data['Monthlyexpenses'] ?></td>
 
                                                 <td>
-                                                    <button class="edit_icon"><i class="fa-regular fa-pen-to-square"></i></button>
-                                                    <button class="dlt_icon"><i class="fa-regular fa-trash-can"></i></button>
+
+
+                                                    <div>
+                                                        <a href="edit-report.php?id=<?php echo $data['id'] ?>" data-toggle="tooltip" title="Edit"> <button class="edit_icon"><i class="fa-regular fa-pen-to-square"></i></button></a>
+                                                        <a href="delete-report.php?id=<?php echo $data['id'] ?>" data-toggle="tooltip" title="Delete"><button class="dlt_icon"><i class="fa-regular fa-trash-can"></i></button></a>
+
+                                                    </div>
+
                                                 </td>
                                             </tr>
                                         <?php

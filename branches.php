@@ -38,26 +38,26 @@
                             </ul>
 
                             <script>
-                            const listItems = document.querySelectorAll('.open_table');
-                            const tableContainers = document.querySelectorAll('.table-container');
+                                const listItems = document.querySelectorAll('.open_table');
+                                const tableContainers = document.querySelectorAll('.table-container');
 
-                            listItems.forEach(item => {
-                                item.addEventListener('click', function() {
-                                    listItems.forEach(i => i.classList.remove('active'));
-                                    this.classList.add('active');
-                                    updateTable(this.id);
+                                listItems.forEach(item => {
+                                    item.addEventListener('click', function() {
+                                        listItems.forEach(i => i.classList.remove('active'));
+                                        this.classList.add('active');
+                                        updateTable(this.id);
+                                    });
                                 });
-                            });
 
-                            function updateTable(id) {
-                                tableContainers.forEach(container => container.classList.remove('active'));
-                                document.querySelectorAll('.table-container').forEach(container => container.classList
-                                    .remove('active'));
-                                document.getElementById(id + 'Table').classList.add('active');
-                            }
+                                function updateTable(id) {
+                                    tableContainers.forEach(container => container.classList.remove('active'));
+                                    document.querySelectorAll('.table-container').forEach(container => container.classList
+                                        .remove('active'));
+                                    document.getElementById(id + 'Table').classList.add('active');
+                                }
 
-                            // Initially show the details table
-                            document.getElementById('reportsTable').classList.add('active');
+                                // Initially show the details table
+                                document.getElementById('reportsTable').classList.add('active');
                             </script>
                         </div>
 
@@ -104,15 +104,12 @@
                                         <div class="row">
                                             <div class="col-md-6 mt-5">
                                                 <label class="control-label mb-2 field_txt">Branch Area</label>
-                                                <input type="text" class="form-control field_input_bg"
-                                                    name="brancharea">
+                                                <input type="text" class="form-control field_input_bg" name="brancharea">
                                             </div>
                                             <div class="col-md-6 mt-5">
-                                                <div
-                                                    class="row last_back_submit d-flex flex-row justify-content-between px-3">
+                                                <div class="row last_back_submit d-flex flex-row justify-content-between px-3">
                                                     <button class="back_btn_staff">Back</button>
-                                                    <button type="submit" class="submit_btn_staff"
-                                                        name="submit-btn">Submit</button>
+                                                    <button type="submit" class="submit_btn_staff" name="submit-btn">Submit</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -144,18 +141,17 @@
                                         while ($data = mysqli_fetch_array($getQuery)) {
 
                                         ?>
-                                        <tr class="tr_hover">
-                                            <td class="td_id_num"><?php echo $no ?></td>
-                                            <td class="td_id_num"><?php echo $data['BranchArea'] ?></td>
+                                            <tr class="tr_hover">
+                                                <td class="td_id_num"><?php echo $no ?></td>
+                                                <td class="td_id_num"><?php echo $data['BranchArea'] ?></td>
 
 
-                                            <td>
-                                                <button class="edit_icon"><i
-                                                        class="fa-regular fa-pen-to-square"></i></button>
-                                                <button class="dlt_icon"><i
-                                                        class="fa-regular fa-trash-can"></i></button>
-                                            </td>
-                                        </tr>
+                                                <td>
+                                                    <a href="edit-branch.php?id=<?php echo $data['id'] ?>" data-toggle="tooltip" title="Edit"> <button class="edit_icon"><i class="fa-regular fa-pen-to-square"></i></button></a>
+                                                    <a href="delete-branches.php?id=<?php echo $data['id'] ?>" data-toggle="tooltip" title="Delete"><button class="dlt_icon"><i class="fa-regular fa-trash-can"></i></button></a>
+
+                                                </td>
+                                            </tr>
                                         <?php
                                             $no++;
                                         }
