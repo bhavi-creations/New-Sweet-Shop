@@ -365,6 +365,8 @@ ob_start(); // Start output buffering
                                             <td class="td_id_num"><?php echo $no ?></td>
                                             <td class="td_id_num"><img
                                                     src="assets/uploads/staff/ echo $data['UploadPhoto'] ?>"
+                                               
+
                                                     style="height:80px; width:80px;" /></td>
                                             <td class="td_id_num"><?php echo $data['PersonName'] ?></td>
                                             <td class="td_id_num"><?php echo $data['Address'] ?></td>
@@ -375,11 +377,16 @@ ob_start(); // Start output buffering
                                             <td class="td_id_num"><?php echo $data['FromBranch'] ?></td>
                                             <td class="td_id_num"><?php echo $data['JoiningDate'] ?></td>
 
-                                            <td class="d-flex"> 
+                                            <td > 
+
+                                            <div  class="d-flex">
+
                                                 <button class="edit_icon"><i
                                                         class="fa-regular fa-pen-to-square"></i></button>
                                                 <button class="dlt_icon"><i
                                                         class="fa-regular fa-trash-can"></i></button>
+
+                                            </div>
                                             </td>
                                         </tr>
                                         <?php
@@ -504,7 +511,7 @@ ob_start(); // Start output buffering
                                         <tr class="tr_hover">
                                             <td class="td_id_num"><?php echo $no ?></td>
                                             <td class="td_id_num"><img
-                                                    src="./uploads/staff/<?php echo $data['UploadPhoto'] ?>"
+                                                    src="assets/uploads/staff/<?php echo $data['UploadPhoto'] ?>"
                                                     style="height:80px; width:80px;" /></td>
                                             <td class="td_id_num"><?php echo $data['PersonName'] ?></td>
                                             <td class="td_id_num"><?php echo $data['Address'] ?></td>
@@ -517,14 +524,15 @@ ob_start(); // Start output buffering
 
                                             <td>
 
-                                                <div>
+                                                <div  class="d-flex">
                                                     <a href="edit-staff.php?id=<?php echo $data['id'] ?>"
                                                         data-toggle="tooltip" title="Edit"> <button class="edit_icon"><i
                                                                 class="fa-regular fa-pen-to-square"></i></button></a>
-                                                    <a href="delete-incharge.php?id=<?php echo $data['id'] ?>"
+                                                    <a href="delete/delete-incharge.php?id=<?php echo $data['id'] ?>"
                                                         data-toggle="tooltip" title="Delete"><button class="dlt_icon"><i
                                                                 class="fa-regular fa-trash-can"></i></button></a>
 
+ 
                                                 </div>
 
 
@@ -611,6 +619,7 @@ ob_start(); // Start output buffering
 
     </div>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <?php
     include "assets/includes/footer.php";
