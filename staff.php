@@ -375,7 +375,7 @@ ob_start(); // Start output buffering
                                             <td class="td_id_num"><?php echo $data['FromBranch'] ?></td>
                                             <td class="td_id_num"><?php echo $data['JoiningDate'] ?></td>
 
-                                            <td>
+                                            <td class="d-flex"> 
                                                 <button class="edit_icon"><i
                                                         class="fa-regular fa-pen-to-square"></i></button>
                                                 <button class="dlt_icon"><i
