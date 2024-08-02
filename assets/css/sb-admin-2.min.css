@@ -12893,9 +12893,9 @@ body.sidebar-toggled footer.sticky-footer {
 .th_names {
   color: #404040;
   font-family: "Nunito Sans";
-  font-size: 18px;
+  font-size: 17px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 900;
   line-height: normal;
 }
 
@@ -12930,6 +12930,7 @@ body.sidebar-toggled footer.sticky-footer {
   width: 35px;
   height: 35px;
   border-radius: 5px;
+  
 }
 
 .dlt_icon {
