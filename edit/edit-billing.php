@@ -2,9 +2,9 @@
 
 
     <?php
-    include "assets/includes/sidebar.php";
-    include "assets/includes/header.php";
-    include "assets/includes/db.php";
+    include "../assets/includes/sidebar.php";
+    include "../assets/includes/header.php";
+    include "../assets/includes/db.php";
 
 
 
@@ -110,6 +110,6 @@
 
 
     <?php
-    include "assets/includes/footer.php";
+    include "../assets/includes/footer.php";
     ?>
 </div>

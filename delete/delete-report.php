@@ -1,5 +1,5 @@
 <?php
-include "assets/includes/db.php";
+include "../assets/includes/db.php";
 
 $delId = $_GET['id'];
 

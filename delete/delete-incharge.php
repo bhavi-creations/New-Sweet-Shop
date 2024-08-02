@@ -1,5 +1,5 @@
 <?php
-include "assets/includes/db.php";
+include "../assets/includes/db.php";
 
 $delId = $_GET['id'];
 
@@ -11,7 +11,7 @@ if ($del) {
 
 
     echo '<script>alert("Deleted Successfully")</script>';
-    echo '<script>window.location.href="staff.php"</script>';
+    echo '<script>window.location.href="../staff.php"</script>';
 } else {
     echo '<script>alert("Failed to Delete")</script>';
 }
