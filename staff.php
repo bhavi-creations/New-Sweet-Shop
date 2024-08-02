@@ -367,7 +367,7 @@ ob_start(); // Start output buffering
                                                     src="assets/uploads/staff/ echo $data['UploadPhoto'] ?>"
                                                
 
-                                                    style="height:80px; width:80px;" /></td>
+                                                    style="height:50px; width:50px;" /></td>
                                             <td class="td_id_num"><?php echo $data['PersonName'] ?></td>
                                             <td class="td_id_num"><?php echo $data['Address'] ?></td>
                                             <td class="td_id_num"><?php echo $data['Age'] ?></td>
@@ -512,7 +512,7 @@ ob_start(); // Start output buffering
                                             <td class="td_id_num"><?php echo $no ?></td>
                                             <td class="td_id_num"><img
                                                     src="assets/uploads/staff/<?php echo $data['UploadPhoto'] ?>"
-                                                    style="height:80px; width:80px;" /></td>
+                                                    style="height:50px; width:50px;" /></td>
                                             <td class="td_id_num"><?php echo $data['PersonName'] ?></td>
                                             <td class="td_id_num"><?php echo $data['Address'] ?></td>
                                             <td class="td_id_num"><?php echo $data['Age'] ?></td>
