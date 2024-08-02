@@ -7,8 +7,6 @@
     include "../assets/includes/db.php";
 
 
-
-
     if (isset($_POST['edit_btn'])) {
 
 
@@ -57,37 +55,44 @@
 
                     <div class="col-md-6 mt-5">
                         <label class="control-label mb-2 field_txt">Item Name</label>
-                        <input value="<?php echo $result['ItemName'] ?>" type="text" class="form-control field_input_bg" name="Item">
+                        <input value="<?php echo $result['ItemName'] ?>" type="text" class="form-control field_input_bg"
+                            name="Item">
 
                     </div>
                     <div class="col-md-6  mt-5">
                         <label class="control-label mb-2 field_txt">Kg's</label>
-                        <input value="<?php echo $result['Kgs'] ?>" type="text" class="form-control field_input_bg" name="Kg">
+                        <input value="<?php echo $result['Kgs'] ?>" type="text" class="form-control field_input_bg"
+                            name="Kg">
                     </div>
                     <div class="col-md-6  mt-5">
                         <label class="control-label mb-2 field_txt">Amount</label>
-                        <input value="<?php echo $result['Amount'] ?>" type="number" class="form-control field_input_bg" name="amount">
+                        <input value="<?php echo $result['Amount'] ?>" type="number" class="form-control field_input_bg"
+                            name="amount">
 
 
                     </div>
                     <div class="col-md-6  mt-5">
                         <label class="control-label mb-2 field_txt">Discount</label>
-                        <input value="<?php echo $result['Discount'] ?>" type="number" class="form-control field_input_bg" name="discount">
+                        <input value="<?php echo $result['Discount'] ?>" type="number"
+                            class="form-control field_input_bg" name="discount">
 
 
                     </div>
                     <div class="col-md-6 mt-5">
                         <label class="control-label mb-2 field_txt">Incharge Name</label>
-                        <input value="<?php echo $result['InchargeName'] ?>" type="text" class="form-control field_input_bg" name="incharge">
+                        <input value="<?php echo $result['InchargeName'] ?>" type="text"
+                            class="form-control field_input_bg" name="incharge">
 
                     </div>
                     <div class="col-md-6  mt-5">
                         <label class="control-label mb-2 field_txt">Branch</label>
-                        <input value="<?php echo $result['Branch'] ?>" type="text" class="form-control field_input_bg" name="branch">
+                        <input value="<?php echo $result['Branch'] ?>" type="text" class="form-control field_input_bg"
+                            name="branch">
                     </div>
                     <div class="col-md-6  mt-5">
                         <label class="control-label mb-2 field_txt">Date</label>
-                        <input value="<?php echo $result['Date'] ?>" type="Date" class="form-control field_input_bg" name="date">
+                        <input value="<?php echo $result['Date'] ?>" type="Date" class="form-control field_input_bg"
+                            name="date">
                     </div>
 
                     <div class="col-md-6 mt-5">
