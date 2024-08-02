@@ -11,7 +11,7 @@ if ($del) {
 
 
     echo '<script>alert("Deleted Successfully")</script>';
-    echo '<script>window.location.href="branches.php"</script>';
+    echo '<script>window.location.href="../branches.php"</script>';
 } else {
     echo '<script>alert("Failed to Delete")</script>';
 }

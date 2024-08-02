@@ -324,10 +324,6 @@ ob_start(); // Start output buffering
 
 
 
-
-
-
-
                     <div id="detailsTable" class="table-container <?= $activeTable == 'detailsTable' ? 'active' : '' ?>">
 
 
@@ -371,9 +367,9 @@ ob_start(); // Start output buffering
                                 ?>
                                     <tr class="tr_hover">
                                         <td class="td_id_num"><?php echo $no ?></td>
-                                        
+
                                         <td class="td_id_num"><img src="./assets/uploads/staff<?php echo $data['UploadPhoto'] ?>" style="height:50px; width:50px;" /></td>
-                                        
+
                                         <td class="td_id_num"><?php echo $data['PersonName'] ?></td>
                                         <td class="td_id_num"><?php echo $data['Address'] ?></td>
                                         <td class="td_id_num"><?php echo $data['Age'] ?></td>
@@ -389,8 +385,11 @@ ob_start(); // Start output buffering
 
                                                 <a href="edit/edit-staff.php?php echo $data['id'] ?>" data-toggle="tooltip" title="Edit"> <button class="edit_icon"><i class="fa-regular fa-pen-to-square"></i></button></a>
 
-                                                <a href="delete/delete-staff.php?php echo $data['id'] ?>" data-toggle="tooltip" title="Delete"> <button class="dlt_icon"><i class="fa-regular fa-trash-can"></i></button></a>
 
+
+                                                <a href="delete/delete-staff.php?id=<?php echo $data['id'] ?>" data-toggle="tooltip" title="Delete">
+                                                    <button class="dlt_icon"><i class="fa-regular fa-trash-can"></i></button>
+                                                </a>
                                             </div>
 
 
@@ -507,10 +506,10 @@ ob_start(); // Start output buffering
                                 ?>
                                     <tr class="tr_hover">
                                         <td class="td_id_num"><?php echo $no ?></td>
-                                         
-                                  
+
+
                                         <td class="td_id_num"><img src="./assets/uploads/staff<?php echo $data['UploadPhoto'] ?>" style="height:50px; width:50px;" /></td>
-                                        
+
                                         <td class="td_id_num"><?php echo $data['PersonName'] ?></td>
                                         <td class="td_id_num"><?php echo $data['Address'] ?></td>
                                         <td class="td_id_num"><?php echo $data['Age'] ?></td>
