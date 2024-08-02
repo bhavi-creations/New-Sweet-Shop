@@ -54,7 +54,7 @@ ob_start(); // Start output buffering
             if (!in_array(strtolower($imageFileType), ['jpg', 'jpeg', 'png', 'gif'])) {
                 echo "<script>alert('only JPG, JPEG, PNG & GIF files are allowed.')</script>";
             } else {
-                $targetimg = "assests/uploads/incharge";
+                $targetimg = "assets/uploads/staff";
                 $imgrename = date('Ymd') . rand(1, 1000000) . '.' . 'jpg';
                 $image1 = move_uploaded_file($_FILES['photo']['tmp_name'], $targetimg . $imgrename);
 
@@ -62,7 +62,9 @@ ob_start(); // Start output buffering
 
                 if ($inchargeQuery) {
                     echo '<script>alert("Incharge Data Inserted Successfully")</script>';
-                    header('Location: ' . $_SERVER['PHP_SELF']);
+                    // header('Location: ' . $_SERVER['PHP_SELF']);
+
+                    header("Location: staff.php?upload_success=incharge");
                     exit();
                 } else {
                     echo '<script>alert("Failed To Insert Incharge Data")</script>';
@@ -87,14 +89,26 @@ ob_start(); // Start output buffering
 
             <div class="row  ">
                 <div class="col-md-4 col-lg-2 ul_border">
+                    <?php
+                    $activeTable = 'detailsTable';
+                    $activeListItem = 'details';
+                    if (isset($_GET['upload_success']) && $_GET['upload_success'] === 'incharge') {
+                        $activeTable = 'inchargesTable';
+                        $activeListItem = 'incharges';
+                    }
+                    ?>
+
+
+
+
                     <ul class="ul_style">
                         <li id="addStaff" class="add_staff_list_detils open_table">+ Add Staff</li>
                         <li id="addIncharge" class="add_incharge_list_detils open_table">+ Add Incharge</li>
 
-                        <li id="details" class="staff_list_detils open_table active">Staff</li>
-                        <li id="salaries" class="staff_list_detils open_table">Sta - Salaries</li>
-                        <li id="incharges" class="staff_list_detils open_table">Incharges</li>
-                        <li id="otherSalaries" class="staff_list_detils open_table">Inc - Salaries</li>
+                        <li id="details" class="staff_list_detils open_table <?= $activeListItem == 'details' ? 'active' : '' ?>">Staff</li>
+                        <li id="salaries" class="staff_list_detils open_table <?= $activeListItem == 'salaries' ? 'active' : '' ?>">Sta - Salaries</li>
+                        <li id="incharges" class="staff_list_detils open_table <?= $activeListItem == 'incharges' ? 'active' : '' ?>">Incharges</li>
+                        <li id="otherSalaries" class="staff_list_detils open_table <?= $activeListItem == 'otherSalaries' ? 'active' : '' ?>">Inc - Salaries</li>
                     </ul>
 
                     <script>
@@ -308,7 +322,13 @@ ob_start(); // Start output buffering
                         </form>
                     </div>
 
-                    <div id="detailsTable" class="table-container active">
+
+
+
+
+
+
+                    <div id="detailsTable" class="table-container <?= $activeTable == 'detailsTable' ? 'active' : '' ?>">
 
 
                         <div class="container">
@@ -351,7 +371,9 @@ ob_start(); // Start output buffering
                                 ?>
                                     <tr class="tr_hover">
                                         <td class="td_id_num"><?php echo $no ?></td>
-                                        <td class="td_id_num"><img src="assets/uploads/staff/ echo $data['UploadPhoto'] ?>" style="height:50px; width:50px;" /></td>
+                                        
+                                        <td class="td_id_num"><img src="./assets/uploads/staff<?php echo $data['UploadPhoto'] ?>" style="height:50px; width:50px;" /></td>
+                                        
                                         <td class="td_id_num"><?php echo $data['PersonName'] ?></td>
                                         <td class="td_id_num"><?php echo $data['Address'] ?></td>
                                         <td class="td_id_num"><?php echo $data['Age'] ?></td>
@@ -386,7 +408,7 @@ ob_start(); // Start output buffering
                         </table>
                     </div>
 
-                    <div id="salariesTable" class="table-container">
+                    <div id="salariesTable" class="table-container <?= $activeTable == 'salariesTable' ? 'active' : '' ?>">
 
                         <div class="container">
                             <div class="row d-flex flex-row justify-content-between pt-4 pb-3">
@@ -402,9 +424,6 @@ ob_start(); // Start output buffering
                                 </div>
                             </div>
                         </div>
-
-
-
 
                         <table class="table_stf">
                             <thead class="table_bg">
@@ -445,7 +464,7 @@ ob_start(); // Start output buffering
                         </table>
                     </div>
 
-                    <div id="inchargesTable" class="table-container">
+                    <div id="inchargesTable" class="table-container <?= $activeTable == 'inchargesTable' ? 'active' : '' ?>">
 
                         <div class="container">
                             <div class="row d-flex flex-row justify-content-between pt-4 pb-3">
@@ -488,7 +507,10 @@ ob_start(); // Start output buffering
                                 ?>
                                     <tr class="tr_hover">
                                         <td class="td_id_num"><?php echo $no ?></td>
-                                        <td class="td_id_num"><img src="assets/uploads/staff/<?php echo $data['UploadPhoto'] ?>" style="height:50px; width:50px;" /></td>
+                                         
+                                  
+                                        <td class="td_id_num"><img src="./assets/uploads/staff<?php echo $data['UploadPhoto'] ?>" style="height:50px; width:50px;" /></td>
+                                        
                                         <td class="td_id_num"><?php echo $data['PersonName'] ?></td>
                                         <td class="td_id_num"><?php echo $data['Address'] ?></td>
                                         <td class="td_id_num"><?php echo $data['Age'] ?></td>
@@ -521,7 +543,8 @@ ob_start(); // Start output buffering
                         </table>
                     </div>
 
-                    <div id="otherSalariesTable" class="table-container">
+                    <div id="otherSalariesTable" class="table-container <?= $activeTable == 'otherSalariesTable' ? 'active' : '' ?>">
+
                         <div class="container">
                             <div class="row d-flex flex-row justify-content-between pt-4 pb-3">
                                 <div class="">
@@ -536,9 +559,6 @@ ob_start(); // Start output buffering
                                 </div>
                             </div>
                         </div>
-
-
-
 
                         <table class="table_stf">
                             <thead class="table_bg">
