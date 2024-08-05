@@ -39,7 +39,7 @@
  
     <div class="container">
    <?php
-        $getBilling = mysqli_query($db_con, "SELECT * FROM staff WHERE id= '" . $_GET['id'] . "' && status=1");
+        $getStaff = mysqli_query($db_con, "SELECT * FROM staff WHERE id= '" . $_GET['id'] . "' && status=1");
         $result = mysqli_fetch_array($getStaff);
         ?>
 
