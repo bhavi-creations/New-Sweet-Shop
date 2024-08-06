@@ -99,7 +99,7 @@ ob_start(); // Start output buffering
                                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <!-- <span class="mr-2  d-lg-inline text-gray-600 small" style="font-size: 20px;     text-transform: capitalize;"><?php echo htmlspecialchars($_SESSION['username']); ?> &nbsp;</span> -->
 
-                                    <img class="img-profile rounded-circle" src="assets/images/avatar.png">
+                                    <img class="img-profile rounded-circle" src="/New-Sweet-Shop/assets/images/avatar.png">
                                     <h6 class="shopHHH">Shop Owner<br /><span class="AdminBtn">Admin</span></h6>
                                 </a>
                                 <!-- Dropdown - User Information -->

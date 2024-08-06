@@ -24,7 +24,7 @@
         $getId = mysqli_real_escape_string($db_con, $_GET['id']);
 
 
-        $staffQuery = mysqli_query($db_con, "UPDATE   staff  SET  PersonName='" . $prsn . "',  Address='" . $add . "',Age='" . $age . "', Account='" . $acnt ."',Phone='" . $phn . "',Salary='" . $slry . "',Branch='" . $brnch . "',Joining='" . $jng . "',Image='" . $image . "',status=1 where id='" . $getId . "'");
+        $staffQuery = mysqli_query($db_con, "UPDATE   staff  SET  PersonName='" . $prsn . "',  Address='" . $add . "',Age='" . $age . "', Account='" . $acnt . "',Phone='" . $phn . "',Salary='" . $slry . "',Branch='" . $brnch . "',Joining='" . $jng . "',Image='" . $image . "',status=1 where id='" . $getId . "'");
         
 
         if ($query) {

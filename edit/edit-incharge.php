@@ -39,8 +39,8 @@
  
     <div class="container">
    <?php
-        $getStaff = mysqli_query($db_con, "SELECT * FROM incharge WHERE id= '" . $_GET['id'] . "' && status=1");
-        $result = mysqli_fetch_array($getStaff);
+        $getincharge = mysqli_query($db_con, "SELECT * FROM incharge WHERE id= '" . $_GET['id'] . "' && status=1");
+        $result = mysqli_fetch_array($getincharge);
         ?>
 
 
