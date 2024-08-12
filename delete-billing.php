@@ -1,9 +1,8 @@
 <?php
-include "../assets/includes/db.php";
+include "assets/includes/db.php";
 
 $delId = $_GET['id'];
 
-////////////////// Soft Delete;///////////////
 
 $del = mysqli_query($db_con, "UPDATE items SET status=0 where id='" . $_GET['id'] . "'");
 

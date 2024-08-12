@@ -20,10 +20,10 @@
                              <div class="col-md-3 col-lg-3  dash-box1">
                                  <div class="row">
                                      <div class="col-md-4">
-                                         <img src="img/b1.png" alt="" class="b1">
+                                         <img src="assets/images/b1.png" alt="" class="b1">
                                      </div>
                                      <div class="col-md-8">
-                                         <img src="img/bg.png" alt="" class="bgg">
+                                         <img src="assets/images/bg.png" alt="" class="bgg">
 
                                      </div>
                                      <div class="col-md-12">
@@ -35,10 +35,10 @@
                              <div class="col-md-3 col-lg-3  dash-box2">
                                  <div class="row">
                                      <div class="col-md-4">
-                                         <img src="img/b2.png" alt="" class="b2">
+                                         <img src="assets/images/b2.png" alt="" class="b2">
                                      </div>
                                      <div class="col-md-8">
-                                         <img src="img/bg.png" alt="" class="bgg">
+                                         <img src="assets/images/bg.png" alt="" class="bgg">
 
                                      </div>
                                      <div class="col-md-12">
@@ -50,10 +50,10 @@
                              <div class="col-md-3 col-lg-3  dash-box3">
                                  <div class="row">
                                      <div class="col-md-4">
-                                         <img src="img/b3.png" alt="" class="b3">
+                                         <img src="assets/images/b3.png" alt="" class="b3">
                                      </div>
                                      <div class="col-md-8">
-                                         <img src="img/bg.png" alt="" class="bgg">
+                                         <img src="assets/images/bg.png" alt="" class="bgg">
 
                                      </div>
                                      <div class="col-md-12">
@@ -65,10 +65,10 @@
                              <div class="col-md-3 col-lg-3  dash-box4">
                                  <div class="row">
                                      <div class="col-md-4">
-                                         <img src="img/b4.png" alt="" class="b2">
+                                         <img src="assets/images/b4.png" alt="" class="b2">
                                      </div>
                                      <div class="col-md-8">
-                                         <img src="img/bg.png" alt="" class="bgg">
+                                         <img src="assets/images/bg.png" alt="" class="bgg">
 
                                      </div>
                                      <div class="col-md-12">
@@ -82,8 +82,8 @@
                          <div class="col-md-12   col-lg-12 ul_border">
                              <h6 class="staff_dtls pt-4">Shop Sale </h6>
 
-                             <img src="img/g1.png" alt="" class="graph1 img-fluid">
-                             <img src="img/g2.png" alt="" class="graph">
+                             <img src="assets/images/g1.png" alt="" class="graph1 img-fluid">
+                             <img src="assets/images/g2.png" alt="" class="graph">
                          </div>
 
                          <div class="col-md-12   col-lg-12 ul_border">
@@ -144,7 +144,8 @@
                                              <div class="col-md-6 mt-5">
 
 
-                                                 <div class="row last_back_submit  d-flex flex-row justify-content-between  px-3">
+                                                 <div
+                                                     class="row last_back_submit  d-flex flex-row justify-content-between  px-3">
                                                      <button class="back_btn_staff">Back</button>
                                                      <button class="submit_btn_staff">Submit</button>
 
@@ -267,7 +268,8 @@
 
 
 
-     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
          <div class="modal-dialog" role="document">
              <div class="modal-content">
                  <div class="modal-header">
@@ -292,4 +294,3 @@
         include "assets/includes/footer.php";
         ?>
  </div>
- 

@@ -31,10 +31,10 @@
             <section>
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-4 col-lg-2 ul_border">
+                        <div class="col-md-3 col-lg-3 ul_border">
                             <ul class="ul_style">
                                 <li id="addReport" class="add_staff_list_detils open_table">+ Add Branch</li>
-                                <li id="reports" class="staff_list_detils open_table active">Total Branches</li>
+                                <li id="reports" class="staff_list_detils open_table active"> Branches</li>
                             </ul>
 
                             <script>
@@ -61,7 +61,7 @@
                             </script>
                         </div>
 
-                        <div class="col-md-11 col-lg-9 ul_border">
+                        <div class="col-md-9 col-lg-9 ul_border">
                             <!-- 
                                 <?php
                                 include '..\..\db.connection\db_connection.php';
@@ -117,63 +117,63 @@
                                 </form>
                             </div>
 
-                            <div id="reportsTable" class="table-container active">
-                                <div class="container">
-                                    <div class="row d-flex flex-row justify-content-between pt-4 pb-3">
-                                        <div class="">
-                                            <h6 class="staff_dtls">Total Branches</h6>
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <table class="table_stf">
-                                    <thead class="table_bg">
-                                        <tr>
-                                            <th class="th_names">ID</th>
-                                            <th class="th_names">Branch Area</th>
-                                            <th class="th_names">Actions</th>
+
+                            <h6 class="staff_dtls mt-5 mb-4">Total Branches</h6>
+
+                            <table id="example" class="display mb-4" style="width:100%">
+                                <thead class="table_bg">
+                                    <tr>
+                                        <th class="th_names">ID</th>
+                                        <th class="th_names">Branch Area</th>
+                                        <th class="th_names">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    $getQuery = mysqli_query($db_con, "SELECT * FROM branch WHERE status = 1");
+                                    $no = 1;
+                                    while ($data = mysqli_fetch_array($getQuery)) {
+
+                                    ?>
+                                        <tr class="tr_hover">
+                                            <td class="td_id_num"><?php echo $no ?></td>
+                                            <td class="td_id_num"><?php echo $data['BranchArea'] ?></td>
+
+
+                                            <td>
+                                                <a href="edit-branch.php?id=<?php echo $data['id'] ?>" data-toggle="tooltip" title="Edit"> <button class="edit_icon"><i class="fa-regular fa-pen-to-square"></i></button></a>
+                                                <a href="delete-branches.php?id=<?php echo $data['id'] ?>" data-toggle="tooltip" title="Delete"><button class="dlt_icon"><i class="fa-regular fa-trash-can"></i></button></a>
+
+                                            </td>
                                         </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
-                                        $getQuery = mysqli_query($db_con, "SELECT * FROM branch WHERE status = 1");
-                                        $no = 1;
-                                        while ($data = mysqli_fetch_array($getQuery)) {
+                                    <?php
+                                        $no++;
+                                    }
+                                    ?>
+                                    <!-- Add more rows as needed -->
+                                </tbody>
+                            </table>
 
-                                        ?>
-                                            <tr class="tr_hover">
-                                                <td class="td_id_num"><?php echo $no ?></td>
-                                                <td class="td_id_num"><?php echo $data['BranchArea'] ?></td>
-
-
-                                                <td>
-                                                    <a href="edit/edit-branch.php?id=<?php echo $data['id'] ?>" data-toggle="tooltip" title="Edit"> <button class="edit_icon"><i class="fa-regular fa-pen-to-square"></i></button></a>
-                                                    <a href="delete/delete-branches.php?id=<?php echo $data['id'] ?>" data-toggle="tooltip" title="Delete"><button class="dlt_icon"><i class="fa-regular fa-trash-can"></i></button></a>
-
-                                                </td>
-                                            </tr>
-                                        <?php
-                                            $no++;
-                                        }
-                                        ?>
-                                        <!-- Add more rows as needed -->
-                                    </tbody>
-                                </table>
-                            </div>
                         </div>
                     </div>
                 </div>
-            </section>
-
-
-
         </div>
+        </section>
+
 
 
     </div>
 
 
-    <?php
-    include "assets/includes/footer.php";
-    ?>
+</div>
+
+
+<?php
+include "assets/includes/footer.php";
+?>
+<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+<script>
+    new DataTable('#example');
+</script>
 </div>

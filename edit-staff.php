@@ -2,12 +2,13 @@
 
 
     <?php
-    include "../assets/includes/sidebar.php";
-    include "../assets/includes/header.php";
-    include "../assets/includes/db.php";    
+    include " assets/includes/sidebar.php";
+    include " assets/includes/header.php";
+    include " assets/includes/db.php";
 
     ?>
     <div class="container">
+
 
 
         <form method="post" enctype="multipart/form-data">
@@ -83,11 +84,11 @@
             </div>
         </form>
 
-        
+
     </div>
 
 
     <?php
-    include "../assets/includes/footer.php";
+    include " assets/includes/footer.php";
     ?>
 </div>

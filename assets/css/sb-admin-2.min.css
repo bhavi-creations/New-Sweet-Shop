@@ -12832,7 +12832,7 @@ body.sidebar-toggled footer.sticky-footer {
 
 .ul_border {
   /* border: 1px solid #9A9A9A; */
-  margin: 15px;
+  margin: 5px;
   border-radius: 12px;
   border: 0.5px solid #9a9a9a;
   background: #fff;
@@ -12930,7 +12930,6 @@ body.sidebar-toggled footer.sticky-footer {
   width: 35px;
   height: 35px;
   border-radius: 5px;
-  
 }
 
 .dlt_icon {
@@ -13100,8 +13099,8 @@ img.b2 {
 }
 .bgg {
   padding-top: 3px;
-  height: 108px;
-  width: 108%;
+  height: 132px;
+  width: 105%;
 }
 h6.Total12 {
   color: #8f8a8a;
@@ -13213,4 +13212,7 @@ img.graph {
 }
 .dashBox {
   display: flex;
+}
+div#layout-wrapper {
+  width: 100% !important;
 }

@@ -2,9 +2,9 @@
 
 
     <?php
-    include "../assets/includes/sidebar.php";
-    include "../assets/includes/header.php";
-    include "../assets/includes/db.php";
+    include "assets/includes/sidebar.php";
+    include "assets/includes/header.php";
+    include "assets/includes/db.php";
 
     if (isset($_POST['edit_btn'])) {
 
@@ -34,7 +34,8 @@
                 <div class="row">
                     <div class="col-md-6 mt-5">
                         <label class="control-label mb-2 field_txt">Branch Area</label>
-                        <input value="<?php echo $result['BranchArea'] ?>" type="text" class="form-control field_input_bg" name="brancharea">
+                        <input value="<?php echo $result['BranchArea'] ?>" type="text"
+                            class="form-control field_input_bg" name="brancharea">
                     </div>
                     <div class="col-md-6 mt-5">
                         <div class="row last_back_submit d-flex flex-row justify-content-between px-3">
@@ -49,7 +50,7 @@
 
 
     <?php
-        include "../assets/includes/footer.php";
+    include "assets/includes/footer.php";
 
     ?>
 </div>

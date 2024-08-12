@@ -41,11 +41,11 @@
             <section>
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-4 col-lg-2 ul_border">
+                        <div class="col-md-2 col-lg-2 ul_border">
                             <ul class="ul_style">
                                 <li id="addReport" class="add_staff_list_detils open_table">+ Add Item</li>
 
-                                <li id="totalBranch" class="staff_list_detils open_table active">Total Items</li>
+                                <li id="totalBranch" class="staff_list_detils open_table active"> Items</li>
 
                             </ul>
 
@@ -73,7 +73,7 @@
                             </script>
                         </div>
 
-                        <div class="col-md-11   col-lg-9 ul_border">
+                        <div class="col-md-10   col-lg-10 ul_border">
 
 
                             <div id="addReportTable" class="table-container  ">
@@ -209,7 +209,7 @@
                             <div id="totalBranchTable" class="table-container active ">
 
 
-                                <div class="container">
+                                <!-- <div class="container">
                                     <div class="row d-flex flex-row justify-content-between pt-4 pb-3">
                                         <div class="">
                                             <h6 class="staff_dtls">Total Items</h6>
@@ -222,10 +222,70 @@
                                             </h6>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
 
 
-                                <table class="table_stf">
+
+
+
+                                <!-- <h4 class="card-title mb-5 strip"></h4> -->
+                                <h6 class="staff_dtls mt-5 mb-4">Total Items</h6>
+
+                                <table id="example" class="display mb-4" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th class="th_names">ID</th>
+                                            <th class="th_names">Item Name</th>
+                                            <th class="th_names">Kg's</th>
+                                            <th class="th_names">Amount</th>
+                                            <th class="th_names">Discount</th>
+                                            <th class="th_names">Incharge Name</th>
+                                            <th class="th_names">Branch</th>
+                                            <th class="th_names">Date</th>
+                                            <th class="th_names">Actions</th>
+
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                        $getQuery = mysqli_query($db_con, "SELECT * FROM items WHERE status = 1");
+                                        $no = 1;
+                                        while ($data = mysqli_fetch_array($getQuery)) {
+
+                                        ?>
+                                            <tr class="tr_hover">
+                                                <td class="td_id_num"><?php echo $no ?></td>
+                                                <td class="td_id_mob"><?php echo $data['ItemName'] ?></td>
+                                                <td class="td_id_mob"><?php echo $data['Kgs'] ?></td>
+                                                <td class="td_id_mob"><?php echo $data['Amount'] ?></td>
+                                                <td class="td_id_mob"><?php echo $data['Discount'] ?></td>
+                                                <td class="td_id_mob"><?php echo $data['InchargeName'] ?>
+                                                </td>
+                                                <td class="td_id_mob"><?php echo $data['Branch'] ?></td>
+                                                <td class="td_id_mob"><?php echo $data['Date'] ?></td>
+
+                                                <td>
+                                                    <div>
+
+                                                        <a href="edit-billing.php?id=<?php echo $data['id'] ?>" data-toggle="tooltip" title="Edit"> <button class="edit_icon"><i class="fa-regular fa-pen-to-square"></i></button></a>
+                                                        <a href="delete-billing.php?id=<?php echo $data['id'] ?>" data-toggle="tooltip" title="Delete"><button class="dlt_icon"><i class="fa-regular fa-trash-can"></i></button></a>
+
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        <?php
+                                            $no++;
+                                        }
+                                        ?>
+                                    </tbody>
+                                </table>
+
+
+
+
+
+
+                                <!-- <table id="example" class="display" style="width:100%">
                                     <thead class="table_bg">
                                         <tr>
                                             <th class="th_names">ID</th>
@@ -259,9 +319,9 @@
 
                                                 <td>
                                                     <div>
-                                                        
-                                                        <a href="edit/edit-billing.php?id=<?php echo $data['id'] ?>" data-toggle="tooltip" title="Edit"> <button class="edit_icon"><i class="fa-regular fa-pen-to-square"></i></button></a>
-                                                        <a href="delete/delete-billing.php?id=<?php echo $data['id'] ?>" data-toggle="tooltip" title="Delete"><button class="dlt_icon"><i class="fa-regular fa-trash-can"></i></button></a>
+
+                                                        <a href="edit-billing.php?id=<?php echo $data['id'] ?>" data-toggle="tooltip" title="Edit"> <button class="edit_icon"><i class="fa-regular fa-pen-to-square"></i></button></a>
+                                                        <a href="delete-billing.php?id=<?php echo $data['id'] ?>" data-toggle="tooltip" title="Delete"><button class="dlt_icon"><i class="fa-regular fa-trash-can"></i></button></a>
 
                                                     </div>
                                                 </td>
@@ -270,14 +330,13 @@
                                             $no++;
                                         }
                                         ?>
-                                        <!-- Add more rows as needed -->
                                     </tbody>
-                                </table>
-                            </div>
+                                </table> -->
+                                <!-- </div> -->
 
+                            </div>
                         </div>
                     </div>
-                </div>
             </section>
 
         </div>
@@ -289,4 +348,8 @@
     <?php
     include "assets/includes/footer.php";
     ?>
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script>
+        new DataTable('#example');
+    </script>
 </div>
