@@ -104,39 +104,37 @@ ob_start(); // Start output buffering
                         <li id="addStaff" class="add_staff_list_detils open_table">+ Add Staff</li>
                         <li id="addIncharge" class="add_incharge_list_detils open_table">+ Add Incharge</li>
 
-                        <li id="details"
-                            class="staff_list_detils open_table <?= $activeListItem == 'details' ? 'active' : '' ?>">
+                        <li id="details" class="staff_list_detils open_table <?= $activeListItem == 'details' ? 'active' : '' ?>">
                             Staff</li>
                         <!-- <li id="salaries"
                             class="staff_list_detils open_table <?= $activeListItem == 'salaries' ? 'active' : '' ?>">
                             Sta - Salaries</li> -->
-                        <li id="incharges"
-                            class="staff_list_detils open_table <?= $activeListItem == 'incharges' ? 'active' : '' ?>">
+                        <li id="incharges" class="staff_list_detils open_table <?= $activeListItem == 'incharges' ? 'active' : '' ?>">
                             Incharges</li>
 
                     </ul>
 
                     <script>
-                    const listItems = document.querySelectorAll('.open_table');
-                    const tableContainers = document.querySelectorAll('.table-container');
+                        const listItems = document.querySelectorAll('.open_table');
+                        const tableContainers = document.querySelectorAll('.table-container');
 
-                    listItems.forEach(item => {
-                        item.addEventListener('click', function() {
-                            listItems.forEach(i => i.classList.remove('active'));
-                            this.classList.add('active');
-                            updateTable(this.id);
+                        listItems.forEach(item => {
+                            item.addEventListener('click', function() {
+                                listItems.forEach(i => i.classList.remove('active'));
+                                this.classList.add('active');
+                                updateTable(this.id);
+                            });
                         });
-                    });
 
-                    function updateTable(id) {
-                        tableContainers.forEach(container => container.classList.remove('active'));
-                        document.querySelectorAll('.table-container').forEach(container => container
-                            .classList.remove('active'));
-                        document.getElementById(id + 'Table').classList.add('active');
-                    }
+                        function updateTable(id) {
+                            tableContainers.forEach(container => container.classList.remove('active'));
+                            document.querySelectorAll('.table-container').forEach(container => container
+                                .classList.remove('active'));
+                            document.getElementById(id + 'Table').classList.add('active');
+                        }
 
-                    // Initially show the details table
-                    document.getElementById('detailsTable').classList.add('active');
+                        // Initially show the details table
+                        document.getElementById('detailsTable').classList.add('active');
                     </script>
                 </div>
 
@@ -152,11 +150,8 @@ ob_start(); // Start output buffering
                                 </div>
                                 <div class="">
                                     <h6 class="kkd_brnch">Kakinada Branch
-                                        <svg class="kkdIcon ml-2" xmlns="http://www.w3.org/2000/svg" width="10"
-                                            height="10" viewBox="0 0 20 19" fill="none">
-                                            <path
-                                                d="M17.7178 4.96555L10 12.1861L2.28216 4.96555C1.67358 4.33767 1.06501 4.32459 0.456432 4.9263C-0.152144 5.52802 -0.152144 6.11665 0.456432 6.6922L9.08714 14.8546C9.30844 15.1162 9.61272 15.247 10 15.247C10.3873 15.247 10.6916 15.1162 10.9129 14.8546L19.5436 6.6922C20.1521 6.11665 20.1521 5.52802 19.5436 4.9263C18.935 4.32459 18.3264 4.33767 17.7178 4.96555Z"
-                                                fill="#202224" />
+                                        <svg class="kkdIcon ml-2" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 20 19" fill="none">
+                                            <path d="M17.7178 4.96555L10 12.1861L2.28216 4.96555C1.67358 4.33767 1.06501 4.32459 0.456432 4.9263C-0.152144 5.52802 -0.152144 6.11665 0.456432 6.6922L9.08714 14.8546C9.30844 15.1162 9.61272 15.247 10 15.247C10.3873 15.247 10.6916 15.1162 10.9129 14.8546L19.5436 6.6922C20.1521 6.11665 20.1521 5.52802 19.5436 4.9263C18.935 4.32459 18.3264 4.33767 17.7178 4.96555Z" fill="#202224" />
                                         </svg>
                                     </h6>
                                 </div>
@@ -223,8 +218,7 @@ ob_start(); // Start output buffering
                                     <div class="col-md-6 mt-5">
 
 
-                                        <div
-                                            class="row last_back_submit  d-flex flex-row justify-content-between  px-3">
+                                        <div class="row last_back_submit  d-flex flex-row justify-content-between  px-3">
                                             <button class="back_btn_staff">Back</button>
                                             <button class="submit_btn_staff" name="submit-btn">Submit</button>
 
@@ -247,11 +241,8 @@ ob_start(); // Start output buffering
                                 </div>
                                 <div class="">
                                     <h6 class="kkd_brnch">Kakinada Branch
-                                        <svg class="kkdIcon ml-3" xmlns="http://www.w3.org/2000/svg" width="20"
-                                            height="19" viewBox="0 0 20 19" fill="none">
-                                            <path
-                                                d="M17.7178 4.96555L10 12.1861L2.28216 4.96555C1.67358 4.33767 1.06501 4.32459 0.456432 4.9263C-0.152144 5.52802 -0.152144 6.11665 0.456432 6.6922L9.08714 14.8546C9.30844 15.1162 9.61272 15.247 10 15.247C10.3873 15.247 10.6916 15.1162 10.9129 14.8546L19.5436 6.6922C20.1521 6.11665 20.1521 5.52802 19.5436 4.9263C18.935 4.32459 18.3264 4.33767 17.7178 4.96555Z"
-                                                fill="#202224" />
+                                        <svg class="kkdIcon ml-3" xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+                                            <path d="M17.7178 4.96555L10 12.1861L2.28216 4.96555C1.67358 4.33767 1.06501 4.32459 0.456432 4.9263C-0.152144 5.52802 -0.152144 6.11665 0.456432 6.6922L9.08714 14.8546C9.30844 15.1162 9.61272 15.247 10 15.247C10.3873 15.247 10.6916 15.1162 10.9129 14.8546L19.5436 6.6922C20.1521 6.11665 20.1521 5.52802 19.5436 4.9263C18.935 4.32459 18.3264 4.33767 17.7178 4.96555Z" fill="#202224" />
                                         </svg>
                                     </h6>
                                 </div>
@@ -319,8 +310,7 @@ ob_start(); // Start output buffering
                                     <div class="col-md-6 mt-5">
 
 
-                                        <div
-                                            class="row last_back_submit  d-flex flex-row justify-content-between  px-3">
+                                        <div class="row last_back_submit  d-flex flex-row justify-content-between  px-3">
                                             <button class="back_btn_staff">Back</button>
                                             <button class="submit_btn_staff" name="submit_incharge_btn">Submit</button>
 
@@ -341,8 +331,7 @@ ob_start(); // Start output buffering
 
 
 
-                    <div id="detailsTable"
-                        class="table-container <?= $activeTable == 'detailsTable' ? 'active' : '' ?>">
+                    <div id="detailsTable" class="table-container <?= $activeTable == 'detailsTable' ? 'active' : '' ?>">
 
 
                         <!-- <div class="container">
@@ -389,31 +378,25 @@ ob_start(); // Start output buffering
                                 while ($data = mysqli_fetch_array($getQuery)) {
 
                                 ?>
-                                <tr class="tr_hover">
-                                    <td class="td_id_num"><?php echo $no ?></td>
+                                    <tr class="tr_hover">
+                                        <td class="td_id_num"><?php echo $no ?></td>
 
-                                    <td class="td_id_num"><img
-                                            src="assets/uploads/staff/<?php echo $data['UploadPhoto'] ?>"
-                                            style="height:50px; width:50px;" /></td>
-                                    <td class="td_id_num"><?php echo $data['PersonName'] ?></td>
-                                    <td class="td_id_num"><?php echo $data['Address'] ?></td>
-                                    <td class="td_id_num"><?php echo $data['Age'] ?></td>
-                                    <td class="td_id_num"><?php echo $data['AccountNo'] ?></td>
-                                    <td class="td_id_num"><?php echo $data['PhoneNo'] ?></td>
-                                    <td class="td_id_num"><?php echo $data['Salary'] ?></td>
-                                    <td class="td_id_num"><?php echo $data['FromBranch'] ?></td>
-                                    <td class="td_id_num"><?php echo $data['JoiningDate'] ?></td>
-                                    <td>
-                                        <div>
-                                            <a href="edit-staff.php?id=<?php echo $data['id'] ?>" data-toggle="tooltip"
-                                                title="Edit"> <button class="edit_icon"><i
-                                                        class="fa-regular fa-pen-to-square"></i></button></a>
-                                            <a href=" delete-staff.php?id=<?php echo $data['id'] ?>"
-                                                data-toggle="tooltip" title="Delete"><button class="dlt_icon"><i
-                                                        class="fa-regular fa-trash-can"></i></button></a>
-                                        </div>
-                                    </td>
-                                </tr>
+                                        <td class="td_id_num"><img src="assets/uploads/staff/<?php echo $data['UploadPhoto'] ?>" style="height:50px; width:50px;" /></td>
+                                        <td class="td_id_num"><?php echo $data['PersonName'] ?></td>
+                                        <td class="td_id_num"><?php echo $data['Address'] ?></td>
+                                        <td class="td_id_num"><?php echo $data['Age'] ?></td>
+                                        <td class="td_id_num"><?php echo $data['AccountNo'] ?></td>
+                                        <td class="td_id_num"><?php echo $data['PhoneNo'] ?></td>
+                                        <td class="td_id_num"><?php echo $data['Salary'] ?></td>
+                                        <td class="td_id_num"><?php echo $data['FromBranch'] ?></td>
+                                        <td class="td_id_num"><?php echo $data['JoiningDate'] ?></td>
+                                        <td>
+                                            <div>
+                                                <a href="edit-staff.php?id=<?php echo $data['id'] ?>" data-toggle="tooltip" title="Edit"> <button class="edit_icon"><i class="fa-regular fa-pen-to-square"></i></button></a>
+                                                <a href=" delete-staff.php?id=<?php echo $data['id'] ?>" data-toggle="tooltip" title="Delete"><button class="dlt_icon"><i class="fa-regular fa-trash-can"></i></button></a>
+                                            </div>
+                                        </td>
+                                    </tr>
                                 <?php
                                     $no++;
                                 }
@@ -429,8 +412,7 @@ ob_start(); // Start output buffering
 
 
 
-                    <div id="inchargesTable"
-                        class="table-container <?= $activeTable == 'inchargesTable' ? 'active' : '' ?>">
+                    <div id="inchargesTable" class="table-container <?= $activeTable == 'inchargesTable' ? 'active' : '' ?>">
 
                         <div class="container">
                             <div class="row d-flex flex-row justify-content-between pt-4 pb-3">
@@ -439,11 +421,8 @@ ob_start(); // Start output buffering
                                 </div>
                                 <div class="">
                                     <h6 class="kkd_brnch">Kakinada Branch
-                                        <svg class="kkdIcon ml-3" xmlns="http://www.w3.org/2000/svg" width="20"
-                                            height="19" viewBox="0 0 20 19" fill="none">
-                                            <path
-                                                d="M17.7178 4.96555L10 12.1861L2.28216 4.96555C1.67358 4.33767 1.06501 4.32459 0.456432 4.9263C-0.152144 5.52802 -0.152144 6.11665 0.456432 6.6922L9.08714 14.8546C9.30844 15.1162 9.61272 15.247 10 15.247C10.3873 15.247 10.6916 15.1162 10.9129 14.8546L19.5436 6.6922C20.1521 6.11665 20.1521 5.52802 19.5436 4.9263C18.935 4.32459 18.3264 4.33767 17.7178 4.96555Z"
-                                                fill="#202224" />
+                                        <svg class="kkdIcon ml-3" xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+                                            <path d="M17.7178 4.96555L10 12.1861L2.28216 4.96555C1.67358 4.33767 1.06501 4.32459 0.456432 4.9263C-0.152144 5.52802 -0.152144 6.11665 0.456432 6.6922L9.08714 14.8546C9.30844 15.1162 9.61272 15.247 10 15.247C10.3873 15.247 10.6916 15.1162 10.9129 14.8546L19.5436 6.6922C20.1521 6.11665 20.1521 5.52802 19.5436 4.9263C18.935 4.32459 18.3264 4.33767 17.7178 4.96555Z" fill="#202224" />
                                         </svg>
                                     </h6>
                                 </div>
@@ -477,42 +456,34 @@ ob_start(); // Start output buffering
                                                 while ($data = mysqli_fetch_array($getQuery)) {
 
                                                 ?>
-                                                <tr class="tr_hover">
-                                                    <td class="td_id_num"><?php echo $no ?></td>
+                                                    <tr class="tr_hover">
+                                                        <td class="td_id_num"><?php echo $no ?></td>
 
 
-                                                    <td class="td_id_num"><img
-                                                            src="./assets/uploads/incharge/<?php echo $data['UploadPhoto'] ?>"
-                                                            style="height:50px; width:50px;" /></td>
+                                                        <td class="td_id_num"><img src="./assets/uploads/incharge/<?php echo $data['UploadPhoto'] ?>" style="height:50px; width:50px;" /></td>
 
-                                                    <td class="td_id_num"><?php echo $data['PersonName'] ?></td>
-                                                    <td class="td_id_num"><?php echo $data['Address'] ?></td>
-                                                    <td class="td_id_num"><?php echo $data['Age'] ?></td>
-                                                    <td class="td_id_num"><?php echo $data['AccountNo'] ?></td>
-                                                    <td class="td_id_num"><?php echo $data['PhoneNo'] ?></td>
-                                                    <td class="td_id_num"><?php echo $data['Salary'] ?></td>
-                                                    <td class="td_id_num"><?php echo $data['FromBranch'] ?></td>
-                                                    <td class="td_id_num"><?php echo $data['JoiningDate'] ?></td>
+                                                        <td class="td_id_num"><?php echo $data['PersonName'] ?></td>
+                                                        <td class="td_id_num"><?php echo $data['Address'] ?></td>
+                                                        <td class="td_id_num"><?php echo $data['Age'] ?></td>
+                                                        <td class="td_id_num"><?php echo $data['AccountNo'] ?></td>
+                                                        <td class="td_id_num"><?php echo $data['PhoneNo'] ?></td>
+                                                        <td class="td_id_num"><?php echo $data['Salary'] ?></td>
+                                                        <td class="td_id_num"><?php echo $data['FromBranch'] ?></td>
+                                                        <td class="td_id_num"><?php echo $data['JoiningDate'] ?></td>
 
-                                                    <td>
+                                                        <td>
 
-                                                        <div>
-                                                            <a href="edit-incharge.php?id=<?php echo $data['id'] ?>"
-                                                                data-toggle="tooltip" title="Edit"> <button
-                                                                    class="edit_icon"><i
-                                                                        class="fa-regular fa-pen-to-square"></i></button></a>
-                                                            <a href=" delete-incharge.php?id=<?php echo $data['id'] ?>"
-                                                                data-toggle="tooltip" title="Delete"><button
-                                                                    class="dlt_icon"><i
-                                                                        class="fa-regular fa-trash-can"></i></button></a>
+                                                            <div>
+                                                                <a href="edit-incharge.php?id=<?php echo $data['id'] ?>" data-toggle="tooltip" title="Edit"> <button class="edit_icon"><i class="fa-regular fa-pen-to-square"></i></button></a>
+                                                                <a href=" delete-incharge.php?id=<?php echo $data['id'] ?>" data-toggle="tooltip" title="Delete"><button class="dlt_icon"><i class="fa-regular fa-trash-can"></i></button></a>
 
-                                                        </div>
+                                                            </div>
 
 
 
 
-                                                    </td>
-                                                </tr>
+                                                        </td>
+                                                    </tr>
                                                 <?php
                                                     $no++;
                                                 }
@@ -547,6 +518,6 @@ ob_start(); // Start output buffering
     ?>
     <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
     <script>
-    new DataTable('#example');
+        new DataTable('#example');
     </script>
 </div>

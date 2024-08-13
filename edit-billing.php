@@ -26,7 +26,7 @@
 
         if ($query) {
             echo '<script>alert("Data updated Successfully")</script>';
-            echo '<script>window.location.href="billings.php"</script>';
+            echo '<script>window.location.href="../billings.php"</script>';
         } else {
             echo '<script>alert("Failed To update")</script>';
         }

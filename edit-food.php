@@ -25,7 +25,7 @@
 
         if ($query) {
             echo '<script>alert("Data updated Successfully")</script>';
-            echo '<script>window.location.href="food.php"</script>';
+            echo '<script>window.location.href="../food.php"</script>';
         } else {
             echo '<script>alert("Failed To update")</script>';
         }
