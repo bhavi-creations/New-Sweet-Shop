@@ -105,8 +105,10 @@ ob_start(); // Start output buffering
                         <li id="addStaff" class="add_staff_list_detils open_table">+ Add Staff</li>
                         <li id="addIncharge" class="add_incharge_list_detils open_table">+ Add Incharge</li>
 
-                        <li id="details" class="staff_list_detils open_table <?= $activeListItem == 'details' ? 'active' : '' ?>">Staff</li>
-                        <li id="incharges" class="staff_list_detils open_table <?= $activeListItem == 'incharges' ? 'active' : '' ?>">Incharges</li>
+                        <li id="details" class="staff_list_detils open_table <?= $activeListItem == 'details' ? 'active' : '' ?>">
+                            Staff</li>
+                        <li id="incharges" class="staff_list_detils open_table <?= $activeListItem == 'incharges' ? 'active' : '' ?>">
+                            Incharges</li>
                     </ul>
 
                     <script>
@@ -340,7 +342,7 @@ ob_start(); // Start output buffering
                             </div>
                         </div>
 
-                        <table  id="example"  class="table_stf">
+                        <table id="example" class="display mb-4" style="width:100%">
                             <thead class="table_bg">
                                 <tr>
                                     <th class="th_names">ID</th>
@@ -405,7 +407,7 @@ ob_start(); // Start output buffering
                         </table>
                     </div>
 
-                    
+
                     <div id="inchargesTable" class="table-container <?= $activeTable == 'inchargesTable' ? 'active' : '' ?>">
 
                         <div class="container">
@@ -424,7 +426,7 @@ ob_start(); // Start output buffering
                         </div>
 
 
-                        <table  id="example"  class="table_stf">
+                        <table id="example1" class="display mb-4" style="width:100%">
                             <thead class="table_bg">
                                 <tr>
                                     <th class="th_names">ID</th>
@@ -450,7 +452,6 @@ ob_start(); // Start output buffering
                                     <tr class="tr_hover">
                                         <td class="td_id_num"><?php echo $no ?></td>
 
-
                                         <td class="td_id_num"><img src="./assets/uploads/staff<?php echo $data['UploadPhoto'] ?>" style="height:50px; width:50px;" /></td>
 
                                         <td class="td_id_num"><?php echo $data['PersonName'] ?></td>
@@ -465,11 +466,16 @@ ob_start(); // Start output buffering
                                         <td>
 
                                             <div class="d-flex">
-                                                <a href="edit/edit-incharge.php?id=<?php echo $data['id'] ?>" data-toggle="tooltip" title="Edit"> <button class="edit_icon"><i class="fa-regular fa-pen-to-square"></i></button></a>
-                                                <a href="delete/delete-incharge.php?id=<?php echo $data['id'] ?>" data-toggle="tooltip" title="Delete"><button class="dlt_icon"><i class="fa-regular fa-trash-can"></i></button></a>
+
+                                                <a href="edit/edit-staff.php?id=<?php echo $data['id'] ?>" data-toggle="tooltip" title="Edit"> <button class="edit_icon"><i class="fa-regular fa-pen-to-square"></i></button></a>
 
 
+
+                                                <a href="delete/delete-staff.php?id=<?php echo $data['id'] ?>" data-toggle="tooltip" title="Delete">
+                                                    <button class="dlt_icon"><i class="fa-regular fa-trash-can"></i></button>
+                                                </a>
                                             </div>
+
 
 
 
@@ -485,7 +491,7 @@ ob_start(); // Start output buffering
                         </table>
                     </div>
 
-                    
+
 
                 </div>
             </div>
@@ -505,15 +511,12 @@ ob_start(); // Start output buffering
     include "assets/includes/footer.php";
     ?>
 
-<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
     <script>
         new DataTable('#example');
-           
     </script>
-
-<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
     <script>
-new DataTable('#examples'); 
-</script>
+        new DataTable('#example1');
+    </script>
 
 </div>
