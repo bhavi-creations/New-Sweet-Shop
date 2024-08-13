@@ -85,10 +85,11 @@ ob_start(); // Start output buffering
 
 
 
+        <div class="container branch_container">
 
 
             <div class="row  ">
-                <div class="col-md-4 col-lg-2 ul_border">
+                <div class="col-md-4 col-lg-2 ul_border mb-4">
                     <?php
                     $activeTable = 'detailsTable';
                     $activeListItem = 'details';
@@ -135,7 +136,7 @@ ob_start(); // Start output buffering
                     </script>
                 </div>
 
-                <div class="col-md-11   col-lg-9 ul_border">
+                <div class="col-md-11   col-lg-12 ul_border ">
 
 
                     <div id="addStaffTable" class="table-container  ">
@@ -383,11 +384,11 @@ ob_start(); // Start output buffering
 
                                             <div class="d-flex">
 
-                                                <a href="edit/edit-staff.php?id=<?php echo $data['id'] ?>" data-toggle="tooltip" title="Edit"> <button class="edit_icon"><i class="fa-regular fa-pen-to-square"></i></button></a>
+                                                <a href="edit-staff.php?id=<?php echo $data['id'] ?>" data-toggle="tooltip" title="Edit"> <button class="edit_icon"><i class="fa-regular fa-pen-to-square"></i></button></a>
 
 
 
-                                                <a href="delete/delete-staff.php?id=<?php echo $data['id'] ?>" data-toggle="tooltip" title="Delete">
+                                                <a href="delete-staff.php?id=<?php echo $data['id'] ?>" data-toggle="tooltip" title="Delete">
                                                     <button class="dlt_icon"><i class="fa-regular fa-trash-can"></i></button>
                                                 </a>
                                             </div>
@@ -467,11 +468,11 @@ ob_start(); // Start output buffering
 
                                             <div class="d-flex">
 
-                                                <a href="edit/edit-staff.php?id=<?php echo $data['id'] ?>" data-toggle="tooltip" title="Edit"> <button class="edit_icon"><i class="fa-regular fa-pen-to-square"></i></button></a>
+                                                <a href="edit-staff.php?id=<?php echo $data['id'] ?>" data-toggle="tooltip" title="Edit"> <button class="edit_icon"><i class="fa-regular fa-pen-to-square"></i></button></a>
 
 
 
-                                                <a href="delete/delete-staff.php?id=<?php echo $data['id'] ?>" data-toggle="tooltip" title="Delete">
+                                                <a href="delete-staff.php?id=<?php echo $data['id'] ?>" data-toggle="tooltip" title="Delete">
                                                     <button class="dlt_icon"><i class="fa-regular fa-trash-can"></i></button>
                                                 </a>
                                             </div>
@@ -497,6 +498,7 @@ ob_start(); // Start output buffering
             </div>
 
 
+            </div>
 
 
 
