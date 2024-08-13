@@ -29,9 +29,9 @@
 
 
             <section>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-3 col-lg-3 ul_border">
+                <div class="container  branch_container      ">
+                    
+                        <div class=" p-2 branch_border">
                             <ul class="ul_style">
                                 <li id="addReport" class="add_staff_list_detils open_table">+ Add Branch</li>
                                 <li id="reports" class="staff_list_detils open_table active"> Branches</li>
@@ -61,7 +61,7 @@
                             </script>
                         </div>
 
-                        <div class="col-md-9 col-lg-9 ul_border">
+                        <div class="p-2 branch_border">
                             <!-- 
                                 <?php
                                 include '..\..\db.connection\db_connection.php';
@@ -156,11 +156,13 @@
                             </table>
 
                         </div>
-                    </div>
+                   
                 </div>
-        </div>
-        </section>
 
+            </section>
+        
+        
+        </div>
 
 
     </div>

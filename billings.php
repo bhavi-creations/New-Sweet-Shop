@@ -40,8 +40,8 @@
 
             <section>
                 <div class="container">
-                    <div class="row">
-                        <div class="col-md-2 col-lg-2 ul_border">
+                    <div class="row ">
+                        <div class="col-md-2 col-lg-2   table_adjustment">
                             <ul class="ul_style">
                                 <li id="addReport" class="add_staff_list_detils open_table">+ Add Item</li>
 
@@ -73,7 +73,7 @@
                             </script>
                         </div>
 
-                        <div class="col-md-10   col-lg-10 ul_border">
+                        <div class="col-md-10   col-lg-10   table_adjustment">
 
 
                             <div id="addReportTable" class="table-container  ">

@@ -31,9 +31,9 @@
 
 
             <section>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-2 col-lg-2 ul_border">
+                <div class="container branch_container">
+                    <!-- <div class="row"> -->
+                        <div class="p-2 branch_border">
                             <ul class="ul_style">
                                 <li id="addReport" class="add_staff_list_detils open_table">+ Add Report</li>
                                 <li id="reports" class="staff_list_detils open_table active"> Reports</li>
@@ -64,7 +64,7 @@
                             </script>
                         </div>
 
-                        <div class="col-md-10   col-lg-10 ul_border">
+                        <div class="p-2 branch_border">
 
 
                             <div id="addReportTable" class="table-container  ">
@@ -258,9 +258,15 @@
                             </div>
 
                         </div>
-                    </div>
+                    <!-- </div> -->
                 </div>
             </section>
+
+
+
+           
+        
+
 
 
         </div>

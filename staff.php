@@ -21,10 +21,11 @@ ob_start(); // Start output buffering
             $jng = mysqli_real_escape_string($db_con, $_POST['joining']);
             $image = mysqli_real_escape_string($db_con, $_FILES['photo']['name']);
             $imageFileType = pathinfo($image, PATHINFO_EXTENSION);
+
             if (!in_array(strtolower($imageFileType), ['jpg', 'jpeg', 'png', 'gif'])) {
                 echo "<script>alert('only JPG, JPEG, PNG & GIF files are allowed.')</script>";
             } else {
-                $targetimg = "assets/uploads/staff/";
+                $targetimg = "assets/uploads/staff";
                 $imgrename = date('Ymd') . rand(1, 1000000) . '.' . 'jpg';
                 $image1 = move_uploaded_file($_FILES['photo']['tmp_name'], $targetimg . $imgrename);
 
@@ -39,25 +40,25 @@ ob_start(); // Start output buffering
                 }
             }
         } elseif (isset($_POST['submit_incharge_btn'])) {
-            $prsn1 = mysqli_real_escape_string($db_con, $_POST['person1']);
-            $add1 = mysqli_real_escape_string($db_con, $_POST['address1']);
-            $age1 = mysqli_real_escape_string($db_con, $_POST['age1']);
-            $acnt1 = mysqli_real_escape_string($db_con, $_POST['account1']);
-            $phn1 = mysqli_real_escape_string($db_con, $_POST['phone1']);
-            $slry1 = mysqli_real_escape_string($db_con, $_POST['salary1']);
-            $brnch1 = mysqli_real_escape_string($db_con, $_POST['branch1']);
-            $jng1 = mysqli_real_escape_string($db_con, $_POST['joining1']);
-            $image = mysqli_real_escape_string($db_con, $_FILES['photo1']['name']);
+            $prsn = mysqli_real_escape_string($db_con, $_POST['person']);
+            $add = mysqli_real_escape_string($db_con, $_POST['address']);
+            $age = mysqli_real_escape_string($db_con, $_POST['age']);
+            $acnt = mysqli_real_escape_string($db_con, $_POST['account']);
+            $phn = mysqli_real_escape_string($db_con, $_POST['phone']);
+            $slry = mysqli_real_escape_string($db_con, $_POST['salary']);
+            $brnch = mysqli_real_escape_string($db_con, $_POST['branch']);
+            $jng = mysqli_real_escape_string($db_con, $_POST['joining']);
+            $image = mysqli_real_escape_string($db_con, $_FILES['photo']['name']);
             $imageFileType = pathinfo($image, PATHINFO_EXTENSION);
 
             if (!in_array(strtolower($imageFileType), ['jpg', 'jpeg', 'png', 'gif'])) {
                 echo "<script>alert('only JPG, JPEG, PNG & GIF files are allowed.')</script>";
             } else {
-                $targetimg1 = "assets/uploads/incharge/";
-                $imgrename1 = date('Ymd') . rand(1, 1000000) . '.' . 'jpg';
-                $image = move_uploaded_file($_FILES['photo1']['tmp_name'], $targetimg1 . $imgrename1);
+                $targetimg = "assets/uploads/staff";
+                $imgrename = date('Ymd') . rand(1, 1000000) . '.' . 'jpg';
+                $image1 = move_uploaded_file($_FILES['photo']['tmp_name'], $targetimg . $imgrename);
 
-                $inchargeQuery = mysqli_query($db_con, "INSERT INTO incharge (UploadPhoto, PersonName1, Address1, Age1, AccountNo1, PhoneNo1, Salary1, FromBranch1, JoiningDate1, status) VALUES ('$imgrename1', '$prsn1', '$add1', '$age1', '$acnt1', '$phn1', '$slry1', '$brnch1', '$jng1', 1)");
+                $inchargeQuery = mysqli_query($db_con, "INSERT INTO incharge (UploadPhoto, PersonName, Address, Age, AccountNo, PhoneNo, Salary, FromBranch, JoiningDate, status) VALUES ('$imgrename', '$prsn', '$add', '$age', '$acnt', '$phn', '$slry', '$brnch', '$jng', 1)");
 
                 if ($inchargeQuery) {
                     echo '<script>alert("Incharge Data Inserted Successfully")</script>';
@@ -87,7 +88,7 @@ ob_start(); // Start output buffering
 
 
             <div class="row  ">
-                <div class="col-md-2 col-lg-2 ul_border">
+                <div class="col-md-4 col-lg-2 ul_border">
                     <?php
                     $activeTable = 'detailsTable';
                     $activeListItem = 'details';
@@ -104,14 +105,8 @@ ob_start(); // Start output buffering
                         <li id="addStaff" class="add_staff_list_detils open_table">+ Add Staff</li>
                         <li id="addIncharge" class="add_incharge_list_detils open_table">+ Add Incharge</li>
 
-                        <li id="details" class="staff_list_detils open_table <?= $activeListItem == 'details' ? 'active' : '' ?>">
-                            Staff</li>
-                        <!-- <li id="salaries"
-                            class="staff_list_detils open_table <?= $activeListItem == 'salaries' ? 'active' : '' ?>">
-                            Sta - Salaries</li> -->
-                        <li id="incharges" class="staff_list_detils open_table <?= $activeListItem == 'incharges' ? 'active' : '' ?>">
-                            Incharges</li>
-
+                        <li id="details" class="staff_list_detils open_table <?= $activeListItem == 'details' ? 'active' : '' ?>">Staff</li>
+                        <li id="incharges" class="staff_list_detils open_table <?= $activeListItem == 'incharges' ? 'active' : '' ?>">Incharges</li>
                     </ul>
 
                     <script>
@@ -138,7 +133,7 @@ ob_start(); // Start output buffering
                     </script>
                 </div>
 
-                <div class="col-md-10   col-lg-10 ul_border">
+                <div class="col-md-11   col-lg-9 ul_border">
 
 
                     <div id="addStaffTable" class="table-container  ">
@@ -259,32 +254,32 @@ ob_start(); // Start output buffering
                                     <div class="col-md-6  mt-5">
 
                                         <label class="control-label mb-2 field_txt">Upload Photo</label>
-                                        <input type="file" class="form-control field_input_bg" name="photo1">
+                                        <input type="file" class="form-control field_input_bg" name="photo">
                                     </div>
                                     <div class=" col-md-6   mt-5">
                                         <label class="control-label mb-2 field_txt">Person Name </label>
-                                        <input type="text" class="form-control field_input_bg" name="person1">
+                                        <input type="text" class="form-control field_input_bg" name="person">
 
 
                                     </div>
                                     <div class="col-md-6 mt-5">
                                         <label class="control-label mb-2 field_txt">Address</label>
-                                        <input type="text" class="form-control field_input_bg" name="address1">
+                                        <input type="text" class="form-control field_input_bg" name="address">
 
                                     </div>
                                     <div class="col-md-6  mt-5">
                                         <label class="control-label mb-2 field_txt">Age</label>
-                                        <input type="number" class="form-control field_input_bg" name="age1">
+                                        <input type="number" class="form-control field_input_bg" name="age">
                                     </div>
                                     <div class="col-md-6  mt-5">
                                         <label class="control-label mb-2 field_txt">Account No.</label>
-                                        <input type="number" class="form-control field_input_bg" name="account1">
+                                        <input type="number" class="form-control field_input_bg" name="account">
 
 
                                     </div>
                                     <div class="col-md-6  mt-5">
                                         <label class="control-label mb-2 field_txt">Phone No.</label>
-                                        <input type="phone" class="form-control field_input_bg" name="phone1">
+                                        <input type="phone" class="form-control field_input_bg" name="phone">
 
 
                                     </div>
@@ -292,19 +287,19 @@ ob_start(); // Start output buffering
                                     <div class="col-md-6 mt-5">
 
                                         <label class="control-label mb-2 field_txt">Salary/Monthly</label>
-                                        <input type="number" class="form-control field_input_bg" name="salary1">
+                                        <input type="number" class="form-control field_input_bg" name="salary">
 
                                     </div>
                                     <div class="col-md-6 mt-5">
 
                                         <label class="control-label mb-2 field_txt">From Branch</label>
-                                        <input type="text" class="form-control field_input_bg" name="branch1">
+                                        <input type="text" class="form-control field_input_bg" name="branch">
 
                                     </div>
                                     <div class="col-md-6 mt-5">
 
                                         <label class="control-label mb-2 field_txt">Joining Date</label>
-                                        <input type="date" class="form-control field_input_bg" name="joining1">
+                                        <input type="date" class="form-control field_input_bg" name="joining">
 
                                     </div>
                                     <div class="col-md-6 mt-5">
@@ -327,14 +322,10 @@ ob_start(); // Start output buffering
 
 
 
-
-
-
-
                     <div id="detailsTable" class="table-container <?= $activeTable == 'detailsTable' ? 'active' : '' ?>">
 
 
-                        <!-- <div class="container">
+                        <div class="container">
                             <div class="row d-flex flex-row justify-content-between pt-4 pb-3">
                                 <div class="">
                                     <h6 class="staff_dtls">Staff Details</h6>
@@ -347,15 +338,9 @@ ob_start(); // Start output buffering
                                     </h6>
                                 </div>
                             </div>
-                        </div> -->
-                        <!-- <div class="row">
-                            <div class="col-12">
-                                <div class="card">
-                                    <div class="card-body"> -->
+                        </div>
 
-                        <h6 class="staff_dtls mt-5 mb-4">Total Staff</h6>
-
-                        <table id="example" class="display mb-4" style="width:100%">
+                        <table  id="example"  class="table_stf">
                             <thead class="table_bg">
                                 <tr>
                                     <th class="th_names">ID</th>
@@ -381,7 +366,8 @@ ob_start(); // Start output buffering
                                     <tr class="tr_hover">
                                         <td class="td_id_num"><?php echo $no ?></td>
 
-                                        <td class="td_id_num"><img src="assets/uploads/staff/<?php echo $data['UploadPhoto'] ?>" style="height:50px; width:50px;" /></td>
+                                        <td class="td_id_num"><img src="./assets/uploads/staff<?php echo $data['UploadPhoto'] ?>" style="height:50px; width:50px;" /></td>
+
                                         <td class="td_id_num"><?php echo $data['PersonName'] ?></td>
                                         <td class="td_id_num"><?php echo $data['Address'] ?></td>
                                         <td class="td_id_num"><?php echo $data['Age'] ?></td>
@@ -390,11 +376,24 @@ ob_start(); // Start output buffering
                                         <td class="td_id_num"><?php echo $data['Salary'] ?></td>
                                         <td class="td_id_num"><?php echo $data['FromBranch'] ?></td>
                                         <td class="td_id_num"><?php echo $data['JoiningDate'] ?></td>
+
                                         <td>
-                                            <div>
-                                                <a href="edit-staff.php?id=<?php echo $data['id'] ?>" data-toggle="tooltip" title="Edit"> <button class="edit_icon"><i class="fa-regular fa-pen-to-square"></i></button></a>
-                                                <a href=" delete-staff.php?id=<?php echo $data['id'] ?>" data-toggle="tooltip" title="Delete"><button class="dlt_icon"><i class="fa-regular fa-trash-can"></i></button></a>
+
+                                            <div class="d-flex">
+
+                                                <a href="edit/edit-staff.php?id=<?php echo $data['id'] ?>" data-toggle="tooltip" title="Edit"> <button class="edit_icon"><i class="fa-regular fa-pen-to-square"></i></button></a>
+
+
+
+                                                <a href="delete/delete-staff.php?id=<?php echo $data['id'] ?>" data-toggle="tooltip" title="Delete">
+                                                    <button class="dlt_icon"><i class="fa-regular fa-trash-can"></i></button>
+                                                </a>
                                             </div>
+
+
+
+
+
                                         </td>
                                     </tr>
                                 <?php
@@ -404,14 +403,9 @@ ob_start(); // Start output buffering
                                 <!-- Add more rows as needed -->
                             </tbody>
                         </table>
-                        <!-- </div>
-                                </div>
-                            </div>
-                        </div> -->
                     </div>
 
-
-
+                    
                     <div id="inchargesTable" class="table-container <?= $activeTable == 'inchargesTable' ? 'active' : '' ?>">
 
                         <div class="container">
@@ -428,76 +422,70 @@ ob_start(); // Start output buffering
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="card">
-                                    <div class="card-body">
-
-                                        <table id="example" class="display" style="width:100%">
-                                            <thead class="table_bg">
-                                                <tr>
-                                                    <th class="th_names">ID</th>
-                                                    <th class="th_names">Upload Photo</th>
-                                                    <th class="th_names">Person Name</th>
-                                                    <th class="th_names">Address</th>
-                                                    <th class="th_names">Age</th>
-                                                    <th class="th_names">Account No</th>
-                                                    <th class="th_names">Phone No</th>
-                                                    <th class="th_names">Salary</th>
-                                                    <th class="th_names">From Branch</th>
-                                                    <th class="th_names">Joining Date</th>
-                                                    <th class="th_names">Actions</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <?php
-                                                $getQuery = mysqli_query($db_con, "SELECT * FROM incharge WHERE status = 1");
-                                                $no = 1;
-                                                while ($data = mysqli_fetch_array($getQuery)) {
-
-                                                ?>
-                                                    <tr class="tr_hover">
-                                                        <td class="td_id_num"><?php echo $no ?></td>
 
 
-                                                        <td class="td_id_num"><img src="./assets/uploads/incharge/<?php echo $data['UploadPhoto'] ?>" style="height:50px; width:50px;" /></td>
+                        <table  id="example"  class="table_stf">
+                            <thead class="table_bg">
+                                <tr>
+                                    <th class="th_names">ID</th>
+                                    <th class="th_names">Upload Photo</th>
+                                    <th class="th_names">Person Name</th>
+                                    <th class="th_names">Address</th>
+                                    <th class="th_names">Age</th>
+                                    <th class="th_names">Account No</th>
+                                    <th class="th_names">Phone No</th>
+                                    <th class="th_names">Salary</th>
+                                    <th class="th_names">From Branch</th>
+                                    <th class="th_names">Joining Date</th>
+                                    <th class="th_names">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                $getQuery = mysqli_query($db_con, "SELECT * FROM incharge WHERE status = 1");
+                                $no = 1;
+                                while ($data = mysqli_fetch_array($getQuery)) {
 
-                                                        <td class="td_id_num"><?php echo $data['PersonName'] ?></td>
-                                                        <td class="td_id_num"><?php echo $data['Address'] ?></td>
-                                                        <td class="td_id_num"><?php echo $data['Age'] ?></td>
-                                                        <td class="td_id_num"><?php echo $data['AccountNo'] ?></td>
-                                                        <td class="td_id_num"><?php echo $data['PhoneNo'] ?></td>
-                                                        <td class="td_id_num"><?php echo $data['Salary'] ?></td>
-                                                        <td class="td_id_num"><?php echo $data['FromBranch'] ?></td>
-                                                        <td class="td_id_num"><?php echo $data['JoiningDate'] ?></td>
+                                ?>
+                                    <tr class="tr_hover">
+                                        <td class="td_id_num"><?php echo $no ?></td>
 
-                                                        <td>
 
-                                                            <div>
-                                                                <a href="edit-incharge.php?id=<?php echo $data['id'] ?>" data-toggle="tooltip" title="Edit"> <button class="edit_icon"><i class="fa-regular fa-pen-to-square"></i></button></a>
-                                                                <a href=" delete-incharge.php?id=<?php echo $data['id'] ?>" data-toggle="tooltip" title="Delete"><button class="dlt_icon"><i class="fa-regular fa-trash-can"></i></button></a>
+                                        <td class="td_id_num"><img src="./assets/uploads/staff<?php echo $data['UploadPhoto'] ?>" style="height:50px; width:50px;" /></td>
 
-                                                            </div>
+                                        <td class="td_id_num"><?php echo $data['PersonName'] ?></td>
+                                        <td class="td_id_num"><?php echo $data['Address'] ?></td>
+                                        <td class="td_id_num"><?php echo $data['Age'] ?></td>
+                                        <td class="td_id_num"><?php echo $data['AccountNo'] ?></td>
+                                        <td class="td_id_num"><?php echo $data['PhoneNo'] ?></td>
+                                        <td class="td_id_num"><?php echo $data['Salary'] ?></td>
+                                        <td class="td_id_num"><?php echo $data['FromBranch'] ?></td>
+                                        <td class="td_id_num"><?php echo $data['JoiningDate'] ?></td>
+
+                                        <td>
+
+                                            <div class="d-flex">
+                                                <a href="edit/edit-incharge.php?id=<?php echo $data['id'] ?>" data-toggle="tooltip" title="Edit"> <button class="edit_icon"><i class="fa-regular fa-pen-to-square"></i></button></a>
+                                                <a href="delete/delete-incharge.php?id=<?php echo $data['id'] ?>" data-toggle="tooltip" title="Delete"><button class="dlt_icon"><i class="fa-regular fa-trash-can"></i></button></a>
+
+
+                                            </div>
 
 
 
 
-                                                        </td>
-                                                    </tr>
-                                                <?php
-                                                    $no++;
-                                                }
-                                                ?>
-                                                <!-- Add more rows as needed -->
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                                        </td>
+                                    </tr>
+                                <?php
+                                    $no++;
+                                }
+                                ?>
+                                <!-- Add more rows as needed -->
+                            </tbody>
+                        </table>
                     </div>
 
-
+                    
 
                 </div>
             </div>
@@ -516,8 +504,16 @@ ob_start(); // Start output buffering
     <?php
     include "assets/includes/footer.php";
     ?>
-    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+
+<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
     <script>
         new DataTable('#example');
+           
     </script>
+
+<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script>
+new DataTable('#examples'); 
+</script>
+
 </div>

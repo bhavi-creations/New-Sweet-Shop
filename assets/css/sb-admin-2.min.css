@@ -12830,14 +12830,65 @@ body.sidebar-toggled footer.sticky-footer {
   border-radius: 6px;
 }
 
-.ul_border {
-  /* border: 1px solid #9A9A9A; */
-  margin: 5px;
+
+
+/* branch_container */
+.branch_container {
+  display: flex;
+  width: 100%; /* Ensure container takes full width */
+}
+
+.branch_border {
+  margin-right: 10px;  
   border-radius: 12px;
   border: 0.5px solid #9a9a9a;
   background: #fff;
   box-shadow: 0px 12px 36px 0px rgba(220, 224, 249, 0.25);
 }
+
+.branch_border:first-child {
+  flex: 0 0 25%; /* Take 25% of the container's width */
+}
+
+.branch_border:last-child {
+  flex-grow: 1; /* Allows div to grow and fill remaining space */
+  margin-right: 0;
+}
+
+
+
+
+.ul_border {
+  flex: 1; 
+  margin-right: 10px;  
+  border-radius: 12px;
+  border: 0.5px solid #9a9a9a;
+  background: #fff;
+  box-shadow: 0px 12px 36px 0px rgba(220, 224, 249, 0.25);
+}
+.ul_border:last-child {
+  margin-right: 0; 
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.table_adjustment {
+  flex: 1; /* Ensures both divs take up available space */
+  margin-right: 10px; /* Adds space between the divs */
+  border-radius: 12px;
+  border: 0.5px solid #9a9a9a;
+  background: #fff;
+  box-shadow: 0px 12px 36px 0px rgba(220, 224, 249, 0.25);
+}
+
+.table_adjustment:last-child {
+  margin-right: 0; /* Removes right margin from the last div */
+}
+
+
+
 
 .td_id_num {
   color: #606060;
@@ -13216,3 +13267,6 @@ img.graph {
 div#layout-wrapper {
   width: 100% !important;
 }
+
+
+
