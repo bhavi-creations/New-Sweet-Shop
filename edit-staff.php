@@ -1,8 +1,8 @@
 <div id="wrapper">
     <?php
-    include " assets/includes/sidebar.php";
-    include " assets/includes/header.php";
-    include " assets/includes/db.php";
+    include "assets/includes/sidebar.php";
+    include "assets/includes/header.php";
+    include "assets/includes/db.php";
 
     if (isset($_POST['edit_btn'])) {
         $prsn = mysqli_real_escape_string($db_con, $_POST['person']);
@@ -14,7 +14,7 @@
         $brnch = mysqli_real_escape_string($db_con, $_POST['branch']);
         $jng = mysqli_real_escape_string($db_con, $_POST['joining']);
         $image = $_FILES['photo']['name'];
-        $target_dir = "../assets/uploads/staff"; // Specify the target directory
+        $target_dir = "../assets/uploads/staff/"; // Specify the target directory
         $target_file = $target_dir . basename($image);
         $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
         $getId = mysqli_real_escape_string($db_con, $_GET['id']);
