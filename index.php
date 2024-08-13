@@ -79,14 +79,14 @@
                              </div>
 
                          </div>
-                         <div class="col-md-12   col-lg-12 ul_border">
+                         <div class="col-md-12   col-lg-12 ul_border mt-5">
                              <h6 class="staff_dtls pt-4">Shop Sale </h6>
 
                              <img src="assets/images/g1.png" alt="" class="graph1 img-fluid">
                              <img src="assets/images/g2.png" alt="" class="graph">
                          </div>
 
-                         <div class="col-md-12   col-lg-12 ul_border">
+                         <div class="col-md-12   col-lg-12 ul_border mt-5">
 
 
                              <div id="addReportTable" class="table-container  ">
@@ -144,8 +144,7 @@
                                              <div class="col-md-6 mt-5">
 
 
-                                                 <div
-                                                     class="row last_back_submit  d-flex flex-row justify-content-between  px-3">
+                                                 <div class="row last_back_submit  d-flex flex-row justify-content-between  px-3">
                                                      <button class="back_btn_staff">Back</button>
                                                      <button class="submit_btn_staff">Submit</button>
 
@@ -268,8 +267,7 @@
 
 
 
-     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-         aria-hidden="true">
+     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
          <div class="modal-dialog" role="document">
              <div class="modal-content">
                  <div class="modal-header">

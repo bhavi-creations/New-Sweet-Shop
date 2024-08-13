@@ -14,4 +14,3 @@
     } else {
         echo '<script>alert("Failed to Delete")</script>';
     }
-    ?>
