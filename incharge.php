@@ -99,11 +99,11 @@ ob_start(); // Start output buffering
 
 
                         <ul class="ul_style">
-                            <li id="addStaff" class="add_staff_list_detils open_table">+ Add Staff</li>
+                            <li id="addIncharge" class="add_incharge_list_detils open_table">+ Add Incharge</li>
 
-                            <li id="details" class="staff_list_detils open_table <?= $activeListItem == 'details' ? 'active' : '' ?>">
-                                Staff</li>
                           
+                            <li id="incharges" class="staff_list_detils open_table <?= $activeListItem == 'incharges' ? 'active' : '' ?>">
+                                Incharges</li>
                         </ul>
 
                         <script>
@@ -360,7 +360,20 @@ ob_start(); // Start output buffering
                         <div id="detailsTable" class="table-container <?= $activeTable == 'detailsTable' ? 'active' : '' ?>">
 
 
-                           
+                            <!-- <div class="container">
+                                <div class="row d-flex flex-row justify-content-between pt-4 pb-3">
+                                    <div class="">
+                                        <h6 class="staff_dtls">Staff Details</h6>
+                                    </div>
+                                    <div class="">
+                                        <h6 class="kkd_brnch">Kakinada Branch
+                                            <svg class="kkdIcon ml-3" xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+                                                <path d="M17.7178 4.96555L10 12.1861L2.28216 4.96555C1.67358 4.33767 1.06501 4.32459 0.456432 4.9263C-0.152144 5.52802 -0.152144 6.11665 0.456432 6.6922L9.08714 14.8546C9.30844 15.1162 9.61272 15.247 10 15.247C10.3873 15.247 10.6916 15.1162 10.9129 14.8546L19.5436 6.6922C20.1521 6.11665 20.1521 5.52802 19.5436 4.9263C18.935 4.32459 18.3264 4.33767 17.7178 4.96555Z" fill="#202224" />
+                                            </svg>
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div> -->
                             <h6 class="staff_dtls mt-5 mb-4">Staff Details</h6>
 
                             <table id="example" class="display mb-4" style="width:100%">
@@ -429,7 +442,89 @@ ob_start(); // Start output buffering
                         </div>
 
 
-                     
+                        <div id="inchargesTable" class="table-container <?= $activeTable == 'inchargesTable' ? 'active' : '' ?>">
+
+                            <!-- <div class="container">
+                                <div class="row d-flex flex-row justify-content-between pt-4 pb-3">
+                                    <div class="">
+                                        <h6 class="staff_dtls">Incharge Detailes</h6>
+                                    </div>
+                                    <div class="">
+                                        <h6 class="kkd_brnch">Kakinada Branch
+                                            <svg class="kkdIcon ml-3" xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+                                                <path d="M17.7178 4.96555L10 12.1861L2.28216 4.96555C1.67358 4.33767 1.06501 4.32459 0.456432 4.9263C-0.152144 5.52802 -0.152144 6.11665 0.456432 6.6922L9.08714 14.8546C9.30844 15.1162 9.61272 15.247 10 15.247C10.3873 15.247 10.6916 15.1162 10.9129 14.8546L19.5436 6.6922C20.1521 6.11665 20.1521 5.52802 19.5436 4.9263C18.935 4.32459 18.3264 4.33767 17.7178 4.96555Z" fill="#202224" />
+                                            </svg>
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <h6 class="staff_dtls mt-5 mb-4">Incharge Details</h6>
+
+
+                            <table id="example1" class="display mb-4" style="width:100%">
+                                <thead class="table_bg">
+                                    <tr>
+                                        <th class="th_names">ID</th>
+                                        <th class="th_names">Upload Photo</th>
+                                        <th class="th_names">Person Name</th>
+                                        <th class="th_names">Address</th>
+                                        <th class="th_names">Age</th>
+                                        <th class="th_names">Account No</th>
+                                        <th class="th_names">Phone No</th>
+                                        <th class="th_names">Salary</th>
+                                        <th class="th_names">From Branch</th>
+                                        <th class="th_names">Joining Date</th>
+                                        <th class="th_names">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    $getQuery = mysqli_query($db_con, "SELECT * FROM incharge WHERE status = 1");
+                                    $no = 1;
+                                    while ($data = mysqli_fetch_array($getQuery)) {
+
+                                    ?>
+                                        <tr class="tr_hover">
+                                            <td class="td_id_num"><?php echo $no ?></td>
+
+                                            <td class="td_id_num"><img src="./assets/uploads/incharge/<?php echo $data['UploadPhoto'] ?>" style="height:50px; width:50px;" /></td>
+
+                                            <td class="td_id_num"><?php echo $data['PersonName'] ?></td>
+                                            <td class="td_id_num"><?php echo $data['Address'] ?></td>
+                                            <td class="td_id_num"><?php echo $data['Age'] ?></td>
+                                            <td class="td_id_num"><?php echo $data['AccountNo'] ?></td>
+                                            <td class="td_id_num"><?php echo $data['PhoneNo'] ?></td>
+                                            <td class="td_id_num"><?php echo $data['Salary'] ?></td>
+                                            <td class="td_id_num"><?php echo $data['FromBranch'] ?></td>
+                                            <td class="td_id_num"><?php echo $data['JoiningDate'] ?></td>
+                                            <td>
+
+                                                <div class="d-flex">
+
+                                                    <a href="edit-staff.php?id=<?php echo $data['id'] ?>" data-toggle="tooltip" title="Edit"> <button class="edit_icon"><i class="fa-regular fa-pen-to-square"></i></button></a>
+
+
+
+                                                    <a href="delete-staff.php?id=<?php echo $data['id'] ?>" data-toggle="tooltip" title="Delete">
+                                                        <button class="dlt_icon"><i class="fa-regular fa-trash-can"></i></button>
+                                                    </a>
+                                                </div>
+
+
+
+
+
+                                            </td>
+                                        </tr>
+                                    <?php
+                                        $no++;
+                                    }
+                                    ?>
+                                    <!-- Add more rows as needed -->
+                                </tbody>
+                            </table>
+                        </div>
+
 
 
                     </div>
