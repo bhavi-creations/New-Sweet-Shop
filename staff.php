@@ -161,32 +161,44 @@ ob_start(); // Start output buffering
                                         <div class="col-md-6  mt-5">
 
                                             <label class="control-label mb-2 field_txt">Upload Photo</label>
-                                            <input type="file" class="form-control field_input_bg" name="photo">
+                                            <input type="file" class="form-control field_input_bg" name="photo" id="IMGg">
+                                            <p id="errText" class="errText"></p>
+
                                         </div>
                                         <div class=" col-md-6   mt-5">
                                             <label class="control-label mb-2 field_txt">Person Name </label>
-                                            <input type="text" class="form-control field_input_bg" name="person">
+                                            <input type="text" class="form-control field_input_bg" name="person" id="Pname">
+                                            <p id="errText" class="errText"></p>
+
 
 
                                         </div>
                                         <div class="col-md-6 mt-5">
                                             <label class="control-label mb-2 field_txt">Address</label>
-                                            <input type="text" class="form-control field_input_bg" name="address">
+                                            <input type="text" class="form-control field_input_bg" name="address" id="ADdress">
+                                            <p id="errText" class="errText"></p>
+
 
                                         </div>
                                         <div class="col-md-6  mt-5">
                                             <label class="control-label mb-2 field_txt">Age</label>
-                                            <input type="number" class="form-control field_input_bg" name="age">
+                                            <input type="number" class="form-control field_input_bg" name="age" id="AGee">
+                                            <p id="errText" class="errText"></p>
+
                                         </div>
                                         <div class="col-md-6  mt-5">
                                             <label class="control-label mb-2 field_txt">Account No.</label>
-                                            <input type="number" class="form-control field_input_bg" name="account">
+                                            <input type="number" class="form-control field_input_bg" name="account" id="AnUm">
+                                            <p id="errText" class="errText"></p>
+
 
 
                                         </div>
                                         <div class="col-md-6  mt-5">
                                             <label class="control-label mb-2 field_txt">Phone No.</label>
-                                            <input type="phone" class="form-control field_input_bg" name="phone">
+                                            <input type="phone" class="form-control field_input_bg" name="phone" id="PNum">
+                                            <p id="errText" class="errText"></p>
+
 
 
                                         </div>
@@ -194,13 +206,17 @@ ob_start(); // Start output buffering
                                         <div class="col-md-6 mt-5">
 
                                             <label class="control-label mb-2 field_txt">Salary/Monthly</label>
-                                            <input type="number" class="form-control field_input_bg" name="salary">
+                                            <input type="number" class="form-control field_input_bg" name="salary" id="Salar">
+                                            <p id="errText" class="errText"></p>
+
 
                                         </div>
                                         <div class="col-md-6 mt-5">
 
                                             <label class="control-label mb-2 field_txt">From Branch</label>
-                                            <input type="text" class="form-control field_input_bg" name="branch">
+                                            <input type="text" class="form-control field_input_bg" name="branch" id="FBranch">
+                                            <p id="errText" class="errText"></p>
+
 
                                         </div>
                                         <div class="col-md-6 mt-5">
@@ -214,8 +230,11 @@ ob_start(); // Start output buffering
 
                                             <div class="row last_back_submit  d-flex flex-row justify-content-between  px-3">
                                                 <button class="back_btn_staff">Back</button>
-                                                <button class="submit_btn_staff" name="submit-btn">Submit</button>
-
+                                                <!-- <button class="submit_btn_staff" name="submit-btn">Submit</button> -->
+                                                <button type="button" id="add-billing" class="btn btn-success text-white text-center">
+                                                    Submit</button>
+                                                <button name="submit-btn" type="submit" id="submit-billing" class="btn btn-success text-white text-center">
+                                                    Submit</button>
                                             </div>
 
                                         </div>
@@ -253,32 +272,44 @@ ob_start(); // Start output buffering
                                         <div class="col-md-6  mt-5">
 
                                             <label class="control-label mb-2 field_txt">Upload Photo</label>
-                                            <input type="file" class="form-control field_input_bg" name="photo">
+                                            <input type="file" class="form-control field_input_bg" name="photo" id="IMGg1">
+                                            <p id="errText" class="errText"></p>
+
                                         </div>
                                         <div class=" col-md-6   mt-5">
                                             <label class="control-label mb-2 field_txt">Person Name </label>
-                                            <input type="text" class="form-control field_input_bg" name="person">
+                                            <input type="text" class="form-control field_input_bg" name="person" id="Pname1">
+                                            <p id="errText" class="errText"></p>
+
 
 
                                         </div>
                                         <div class="col-md-6 mt-5">
                                             <label class="control-label mb-2 field_txt">Address</label>
-                                            <input type="text" class="form-control field_input_bg" name="address">
+                                            <input type="text" class="form-control field_input_bg" name="address" id="ADdress1">
+                                            <p id="errText" class="errText"></p>
+
 
                                         </div>
                                         <div class="col-md-6  mt-5">
                                             <label class="control-label mb-2 field_txt">Age</label>
-                                            <input type="number" class="form-control field_input_bg" name="age">
+                                            <input type="number" class="form-control field_input_bg" name="age" id="AGee1">
+                                            <p id="errText" class="errText"></p>
+
                                         </div>
                                         <div class="col-md-6  mt-5">
                                             <label class="control-label mb-2 field_txt">Account No.</label>
-                                            <input type="number" class="form-control field_input_bg" name="account">
+                                            <input type="number" class="form-control field_input_bg" name="account" id="AnUm1">
+                                            <p id="errText" class="errText"></p>
+
 
 
                                         </div>
                                         <div class="col-md-6  mt-5">
                                             <label class="control-label mb-2 field_txt">Phone No.</label>
-                                            <input type="phone" class="form-control field_input_bg" name="phone">
+                                            <input type="phone" class="form-control field_input_bg" name="phone" id="PNum1">
+                                            <p id="errText" class="errText"></p>
+
 
 
                                         </div>
@@ -286,13 +317,17 @@ ob_start(); // Start output buffering
                                         <div class="col-md-6 mt-5">
 
                                             <label class="control-label mb-2 field_txt">Salary/Monthly</label>
-                                            <input type="number" class="form-control field_input_bg" name="salary">
+                                            <input type="number" class="form-control field_input_bg" name="salary" id="Salar1">
+                                            <p id="errText" class="errText"></p>
+
 
                                         </div>
                                         <div class="col-md-6 mt-5">
 
                                             <label class="control-label mb-2 field_txt">From Branch</label>
-                                            <input type="text" class="form-control field_input_bg" name="branch">
+                                            <input type="text" class="form-control field_input_bg" name="branch" id="FBranch1">
+                                            <p id="errText" class="errText"></p>
+
 
                                         </div>
                                         <div class="col-md-6 mt-5">
@@ -306,8 +341,11 @@ ob_start(); // Start output buffering
 
                                             <div class="row last_back_submit  d-flex flex-row justify-content-between  px-3">
                                                 <button class="back_btn_staff">Back</button>
-                                                <button class="submit_btn_staff" name="submit_incharge_btn">Submit</button>
-
+                                                <!-- <button class="submit_btn_staff" name="submit-btn">Submit</button> -->
+                                                <button type="button" id="add-in" class="btn btn-success text-white text-center">
+                                                    Submit</button>
+                                                <button name="submit-btn" type="submit" id="submit-in" class="btn btn-success text-white text-center">
+                                                    Submit</button>
                                             </div>
 
                                         </div>
@@ -511,6 +549,9 @@ ob_start(); // Start output buffering
     ?>
 
     <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script src="./assets/api/staffApi.js"></script>
+    <script src="./assets/api/inchargeApi.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
     <script>
         new DataTable('#example');
     </script>
