@@ -1,8 +1,8 @@
-$("#submit-in").hide();
+$("#submit-billing").hide();
 
 const validationRules = [
   {
-    element: "#IMGg1",
+    element: "#IMGg",
     rules: {
       required: true,
       maxsize: 1 * 1024 * 1024,
@@ -15,7 +15,7 @@ const validationRules = [
     },
   },
   {
-    element: "#Pname1",
+    element: "#Pname",
     rules: {
       required: true,
       regex: regexPatterns.alphabetsregex,
@@ -30,7 +30,7 @@ const validationRules = [
     },
   },
   {
-    element: "#ADdress1",
+    element: "#ADdress",
     rules: {
       required: true,
       regex: regexPatterns.alphabetsregex,
@@ -45,7 +45,7 @@ const validationRules = [
     },
   },
   {
-    element: "#AGee1",
+    element: "#AGee",
     rules: {
       required: true,
       regex: regexPatterns.numbersregex,
@@ -55,7 +55,7 @@ const validationRules = [
     },
   },
   {
-    element: "#AnUm1",
+    element: "#AnUm",
     rules: {
       required: true,
       regex: regexPatterns.numbersregex,
@@ -65,7 +65,7 @@ const validationRules = [
     },
   },
   {
-    element: "#PNum1",
+    element: "#PNum",
     rules: {
       required: true,
       regex: regexPatterns.numbersregex,
@@ -75,7 +75,7 @@ const validationRules = [
     },
   },
   {
-    element: "#Salar1",
+    element: "#Salar",
     rules: {
       required: true,
       regex: regexPatterns.numbersregex,
@@ -85,7 +85,7 @@ const validationRules = [
     },
   },
   {
-    element: "#FBranch1",
+    element: "#FBranch",
     rules: {
       required: true,
       regex: regexPatterns.alphabetsregex,
@@ -101,13 +101,13 @@ const validationRules = [
   },
 ];
 
-$("#add-in").click(function () {
+$("#add-billing").click(function () {
   let IsFormValid = validations(validationRules);
   if (IsFormValid.length > 0) {
     return;
   } else {
-    $("#add-in").hide();
-    $("#submit-in").show();
-    $("#submit-in").trigger("click");
+    $("#add-billing").hide();
+    $("#submit-billing").show();
+    $("#submit-billing").trigger("click");
   }
 });

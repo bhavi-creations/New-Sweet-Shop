@@ -38,34 +38,6 @@ ob_start(); // Start output buffering
                     echo '<script>alert("Failed To Inserted")</script>';
                 }
             }
-        } elseif (isset($_POST['submit_incharge_btn'])) {
-            $prsn = mysqli_real_escape_string($db_con, $_POST['person']);
-            $add = mysqli_real_escape_string($db_con, $_POST['address']);
-            $age = mysqli_real_escape_string($db_con, $_POST['age']);
-            $acnt = mysqli_real_escape_string($db_con, $_POST['account']);
-            $phn = mysqli_real_escape_string($db_con, $_POST['phone']);
-            $slry = mysqli_real_escape_string($db_con, $_POST['salary']);
-            $brnch = mysqli_real_escape_string($db_con, $_POST['branch']);
-            $jng = mysqli_real_escape_string($db_con, $_POST['joining']);
-            $image = mysqli_real_escape_string($db_con, $_FILES['photo']['name']);
-            $imageFileType = pathinfo($image, PATHINFO_EXTENSION);
-
-            if (!in_array(strtolower($imageFileType), ['jpg', 'jpeg', 'png', 'gif'])) {
-                echo "<script>alert('only JPG, JPEG, PNG & GIF files are allowed.')</script>";
-            } else {
-                $targetimg = "assets/uploads/incharge/";
-                $imgrename = date('Ymd') . rand(1, 1000000) . '.' . 'jpg';
-                $image1 = move_uploaded_file($_FILES['photo']['tmp_name'], $targetimg . $imgrename);
-
-                $inchargeQuery = mysqli_query($db_con, "INSERT INTO incharge (UploadPhoto, PersonName, Address, Age, AccountNo, PhoneNo, Salary, FromBranch, JoiningDate, status) VALUES ('$imgrename', '$prsn', '$add', '$age', '$acnt', '$phn', '$slry', '$brnch', '$jng', 1)");
-
-                if ($inchargeQuery) {
-                    echo '<script>alert("Data Inserted Successfully")</script>';
-                    echo '<script>window.location.href="#"</script>';
-                } else {
-                    echo '<script>alert("Failed To Inserted")</script>';
-                }
-            }
         }
     }
     ob_end_flush(); // Flush the output buffer
@@ -103,7 +75,7 @@ ob_start(); // Start output buffering
 
                             <li id="details" class="staff_list_detils open_table <?= $activeListItem == 'details' ? 'active' : '' ?>">
                                 Staff</li>
-                          
+
                         </ul>
 
                         <script>
@@ -360,7 +332,7 @@ ob_start(); // Start output buffering
                         <div id="detailsTable" class="table-container <?= $activeTable == 'detailsTable' ? 'active' : '' ?>">
 
 
-                           
+
                             <h6 class="staff_dtls mt-5 mb-4">Staff Details</h6>
 
                             <table id="example" class="display mb-4" style="width:100%">
@@ -429,7 +401,7 @@ ob_start(); // Start output buffering
                         </div>
 
 
-                     
+
 
 
                     </div>
@@ -453,7 +425,7 @@ ob_start(); // Start output buffering
 
     <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
     <script src="./assets/api/staffApi.js"></script>
-    <script src="./assets/api/inchargeApi.js"></script>
+
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
     <script>
         new DataTable('#example');
