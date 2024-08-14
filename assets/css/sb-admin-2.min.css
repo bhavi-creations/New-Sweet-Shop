@@ -13270,3 +13270,13 @@ div#layout-wrapper {
 
 
 
+.errText {
+  font-size: 11px !important;
+  color: red;
+}
+.errTextt {
+  font-size: 11px !important;
+  color: #c26868;
+  position: absolute;
+  bottom: -38px;
+}
